@@ -116,6 +116,10 @@ The anatomy of a healthcare enterprise is not a single organism. It is five dist
 
 ---
 
+## For Practitioners
+
+Technical readers: a companion **[Practitioner Depth](practitioner.md)** page accompanies this chapter — regulatory data snapshots plus runnable, Colab-ready code.
+
 ---
 
 *Chapter 2 · Preview edition. The complete book is in progress — [share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*

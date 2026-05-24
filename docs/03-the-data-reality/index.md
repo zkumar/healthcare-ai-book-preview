@@ -126,6 +126,10 @@ The chapter that follows examines the semantic layer that gives this data its me
 
 ---
 
+## For Practitioners
+
+Technical readers: a companion **[Practitioner Depth](practitioner.md)** page accompanies this chapter — regulatory data snapshots plus runnable, Colab-ready code.
+
 ---
 
 *Chapter 3 · Preview edition. The complete book is in progress — [share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*

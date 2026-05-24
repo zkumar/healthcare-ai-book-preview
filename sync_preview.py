@@ -1,20 +1,26 @@
 """Copy selected chapters from the private book repo into the public preview's docs/.
 
-- Reads preview-chapters.txt for the list of chapter slugs.
-- For each: copies chapter.md -> docs/<slug>/index.md and figures/ alongside it.
-- Strips the '## For Practitioners' section (practitioner/ is private, not published).
-- Rewrites the chapter footer to a neutral preview footer.
-- Regenerates the `nav:` block in mkdocs.yml from the published chapters.
+For each chapter in preview-chapters.txt:
+  - chapter.md          -> docs/<slug>/index.md  (prose; "For Practitioners" pointer rewritten)
+  - figures/            -> docs/<slug>/figures/
+  - practitioner/       -> docs/<slug>/practitioner.md  (data snapshots + rendered code)
+      practitioner/code/*.py  -> docs/<slug>/code/*.py  and  *.ipynb (via jupytext, for Colab)
+      Colab badges rewritten from the PRIVATE repo to THIS PUBLIC repo.
 
-Run via sync-preview.sh; not meant to be run directly without args.
+Regenerates the `nav:` block in mkdocs.yml. Run via sync-preview.sh.
 """
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
 private = Path(sys.argv[1])
 public = Path(sys.argv[2])
+
+PUBLIC_REPO = "zkumar/healthcare-ai-book-preview"
+PRIVATE_REPO = "zkumar/healthcare-ai-book"
+COLAB_SVG = "https://colab.research.google.com/assets/colab-badge.svg"
 
 chapters_src = private / "chapters"
 docs = public / "docs"
@@ -26,12 +32,19 @@ slugs = [
     if line.strip() and not line.lstrip().startswith("#")
 ]
 
-# Wipe previously-synced chapter dirs (keep index.md, assets, stylesheets)
+
+def demote_headings(md: str) -> str:
+    """Demote every markdown heading one level (# -> ##) so embedded docs nest cleanly."""
+    return re.sub(r"^(#{1,5}) ", r"#\1 ", md, flags=re.MULTILINE)
+
+
+# Wipe previously-synced chapter dirs (keep index.md, assets).
 for d in docs.iterdir():
     if d.is_dir() and re.match(r"^\d{2}-", d.name):
         shutil.rmtree(d)
 
-nav_entries = []
+nav_entries = []  # (chapter_title, read_path, practitioner_path_or_None)
+
 for slug in slugs:
     src_dir = chapters_src / slug
     src_md = src_dir / "chapter.md"
@@ -43,55 +56,121 @@ for slug in slugs:
     dest_dir.mkdir(parents=True, exist_ok=True)
 
     md = src_md.read_text()
+    prac_src = src_dir / "practitioner"
+    has_prac = prac_src.is_dir()
 
-    # Strip the "## For Practitioners" section up to the next horizontal rule.
-    md = re.sub(
-        r"\n## For Practitioners\b.*?(?=\n---\n)",
-        "",
-        md,
-        flags=re.DOTALL,
-    )
+    # Rewrite the "## For Practitioners" section: strip it, then (if practitioner content
+    # exists) we'll surface it via the nav sub-page instead of inline.
+    if has_prac:
+        md = re.sub(
+            r"\n## For Practitioners\b.*?(?=\n---\n)",
+            "\n## For Practitioners\n\nTechnical readers: a companion **[Practitioner Depth](practitioner.md)** "
+            "page accompanies this chapter — regulatory data snapshots plus runnable, Colab-ready code.\n",
+            md,
+            flags=re.DOTALL,
+        )
+    else:
+        md = re.sub(r"\n## For Practitioners\b.*?(?=\n---\n)", "", md, flags=re.DOTALL)
 
-    # Replace the private footer with a neutral preview footer.
+    # Neutral preview footer.
     md = re.sub(
         r"\*Chapter (\d+) of 21 ·[^\n]*\*",
         lambda m: (
-            f"*Chapter {m.group(1)} · Preview edition. "
-            "The complete book is in progress — "
-            "[share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*"
+            f"*Chapter {m.group(1)} · Preview edition. The complete book is in progress — "
+            f"[share feedback](https://github.com/{PUBLIC_REPO}/issues).*"
         ),
         md,
     )
-
     (dest_dir / "index.md").write_text(md)
 
-    # Copy figures alongside so relative figures/ paths resolve.
+    # Figures.
     src_figs = src_dir / "figures"
     if src_figs.is_dir():
         shutil.copytree(src_figs, dest_dir / "figures", dirs_exist_ok=True)
 
-    # Derive a human title from the H1 in the markdown.
     h1 = re.search(r"^#\s+(.+)$", md, flags=re.MULTILINE)
     title = h1.group(1).strip() if h1 else slug
-    nav_entries.append((title, f"{slug}/index.md"))
-    n_figs = len(list((dest_dir / "figures").glob("*"))) if (dest_dir / "figures").is_dir() else 0
-    print(f"  {slug}: synced ({n_figs} figures)")
 
-# Regenerate the nav block in mkdocs.yml between the NAV markers.
+    prac_rel = None
+    if has_prac:
+        prac_rel = f"{slug}/practitioner.md"
+        code_dest = dest_dir / "code"
+        code_dest.mkdir(exist_ok=True)
+
+        parts = [f"# Practitioner Depth — {title.replace('Chapter ', 'Chapter ')}", ""]
+        readme = prac_src / "README.md"
+        if readme.exists():
+            intro = readme.read_text()
+            # Use the first non-heading, non-badge paragraph as the intro blurb.
+            for para in intro.split("\n\n"):
+                p = para.strip()
+                if p and not p.startswith("#") and "colab-badge" not in p and not p.startswith("|"):
+                    parts.append(p)
+                    parts.append("")
+                    break
+
+        # Data snapshots (any *.md in practitioner/ except README.md).
+        snapshot_files = sorted(p for p in prac_src.glob("*.md") if p.name != "README.md")
+        if snapshot_files:
+            parts.append("## Data Snapshots")
+            parts.append("")
+            for sf in snapshot_files:
+                parts.append(demote_headings(sf.read_text().strip()))
+                parts.append("")
+
+        # Code: copy .py, convert to .ipynb, render inline with Colab badge.
+        py_files = sorted((prac_src / "code").glob("*.py")) if (prac_src / "code").is_dir() else []
+        if py_files:
+            parts.append("## Code")
+            parts.append("")
+            parts.append("_Tested and Colab-compatible. Click **Open in Colab** to run any sample in your browser — no setup._")
+            parts.append("")
+            for py in py_files:
+                shutil.copy(py, code_dest / py.name)
+                ipynb = code_dest / (py.stem + ".ipynb")
+                subprocess.run(
+                    ["jupytext", "--to", "ipynb", str(code_dest / py.name), "-o", str(ipynb)],
+                    check=True, capture_output=True,
+                )
+                colab_url = (
+                    f"https://colab.research.google.com/github/{PUBLIC_REPO}/blob/main/"
+                    f"docs/{slug}/code/{ipynb.name}"
+                )
+                parts.append(f"### `{py.name}`")
+                parts.append("")
+                parts.append(f"[![Open In Colab]({COLAB_SVG})]({colab_url})")
+                parts.append("")
+                parts.append(f"[Download .py](code/{py.name}) · [Download notebook](code/{ipynb.name})")
+                parts.append("")
+                parts.append("```python")
+                parts.append(py.read_text().rstrip())
+                parts.append("```")
+                parts.append("")
+
+        (dest_dir / "practitioner.md").write_text("\n".join(parts))
+        n_code = len(py_files)
+        n_figs = len(list((dest_dir / "figures").glob("*"))) if (dest_dir / "figures").is_dir() else 0
+        print(f"  {slug}: synced ({n_figs} figures, practitioner page + {n_code} code sample(s))")
+    else:
+        n_figs = len(list((dest_dir / "figures").glob("*"))) if (dest_dir / "figures").is_dir() else 0
+        print(f"  {slug}: synced ({n_figs} figures, no practitioner content)")
+
+    nav_entries.append((title, f"{slug}/index.md", prac_rel))
+
+# Regenerate the nav block in mkdocs.yml.
 mkdocs_yml = public / "mkdocs.yml"
 text = mkdocs_yml.read_text()
 nav_lines = ["nav:", "  - Home: index.md"]
-for title, path in nav_entries:
-    # Quote titles that contain a colon (YAML safety).
+for title, read_path, prac_path in nav_entries:
     safe_title = f'"{title}"' if ":" in title else title
-    nav_lines.append(f"  - {safe_title}: {path}")
+    if prac_path:
+        nav_lines.append(f"  - {safe_title}:")
+        nav_lines.append(f"    - Read: {read_path}")
+        nav_lines.append(f"    - Practitioner Depth: {prac_path}")
+    else:
+        nav_lines.append(f"  - {safe_title}: {read_path}")
 nav_block = "\n".join(nav_lines)
 
-text = re.sub(
-    r"# NAV-START.*?# NAV-END",
-    f"# NAV-START\n{nav_block}\n# NAV-END",
-    text,
-    flags=re.DOTALL,
-)
+text = re.sub(r"# NAV-START.*?# NAV-END", f"# NAV-START\n{nav_block}\n# NAV-END", text, flags=re.DOTALL)
 mkdocs_yml.write_text(text)
 print(f"\nNav rebuilt with {len(nav_entries)} chapter(s).")

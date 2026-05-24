@@ -95,6 +95,10 @@ Healthcare is not the hardest domain for AI despite its stakes. It is the hardes
 
 ---
 
+## For Practitioners
+
+Technical readers: a companion **[Practitioner Depth](practitioner.md)** page accompanies this chapter — regulatory data snapshots plus runnable, Colab-ready code.
+
 ---
 
 *Chapter 1 · Preview edition. The complete book is in progress — [share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*
