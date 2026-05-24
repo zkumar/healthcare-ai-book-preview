@@ -1,0 +1,772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A preview of the first chapters of a book on healthcare AI — regulation, clinical practice, governance, and equity.">
+      
+      
+      
+        <link rel="canonical" href="https://zkumar.github.io/healthcare-ai-book-preview/03-the-data-reality/">
+      
+      
+        <link rel="prev" href="../02-anatomy-of-the-healthcare-enterprise/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 3 — The Data Reality - Healthcare AI — Preview</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-the-data-reality" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Healthcare AI — Preview" class="md-header__button md-logo" aria-label="Healthcare AI — Preview" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Healthcare AI — Preview
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 3 — The Data Reality
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Healthcare AI — Preview" class="md-nav__button md-logo" aria-label="Healthcare AI — Preview" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Healthcare AI — Preview
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-the-regulated-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1 — The Regulated Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-anatomy-of-the-healthcare-enterprise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2 — Anatomy of a Healthcare Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3 — The Data Reality
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3 — The Data Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-the-pipeline-that-does-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening: The Pipeline That Does Not Exist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-1-the-data-reality-messiness-missingness-and-the-myth-of-the-clean-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 1 — The Data Reality: Messiness, Missingness, and the Myth of the Clean Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 1 — The Data Reality: Messiness, Missingness, and the Myth of the Clean Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-missingness-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Missingness Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-standards-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Standards Reality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-2-data-challenges-for-ai-bias-drift-poverty-and-the-federated-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 2 — Data Challenges for AI: Bias, Drift, Poverty, and the Federated Response
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 2 — Data Challenges for AI: Bias, Drift, Poverty, and the Federated Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-imbalance-and-rare-disease-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class Imbalance and Rare Disease Modeling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#population-bias-and-the-generalization-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Bias and the Generalization Gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-poverty-and-the-equity-imperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Poverty and the Equity Imperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#federated-learning-a-partial-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Federated Learning: A Partial Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-3-data-governance-as-architecture-privacy-lineage-and-the-synthetic-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 3 — Data Governance as Architecture: Privacy, Lineage, and the Synthetic Bridge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 3 — Data Governance as Architecture: Privacy, Lineage, and the Synthetic Bridge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-identification-and-the-hipaa-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De-identification and the HIPAA Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-lineage-and-the-audit-imperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Lineage and the Audit Imperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-close-the-data-foundation-everything-else-requires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Close: The Data Foundation Everything Else Requires
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-3-the-data-reality">Chapter 3 — The Data Reality<a class="headerlink" href="#chapter-3-the-data-reality" title="Permanent link">&para;</a></h1>
+<p><em>Why healthcare data is the most complex, most consequential, and most misunderstood raw material in artificial intelligence</em></p>
+<blockquote>
+<p><strong>What This Chapter Covers:</strong> The five major healthcare data sources and their quality profiles · Six structural AI data challenges unique to healthcare · Federated learning as a privacy-preserving response to data scarcity · Data governance as the architecture that determines what can and cannot be deployed.</p>
+<p><strong>Why It Matters:</strong> Every AI system is only as good as the data it learns from. In healthcare, that data is messier, more biased, more legally constrained, and more clinically consequential than in virtually any other domain. Understanding the data reality is not preliminary to building healthcare AI — it is building healthcare AI.</p>
+</blockquote>
+<hr />
+<h2 id="opening-the-pipeline-that-does-not-exist">Opening: The Pipeline That Does Not Exist<a class="headerlink" href="#opening-the-pipeline-that-does-not-exist" title="Permanent link">&para;</a></h2>
+<p>In almost every AI vendor presentation, there is a slide that shows a clean, linear pipeline. Data flows from source systems into a lake. The lake feeds a feature engineering layer. The feature layer feeds a model. The model outputs a prediction. The prediction drives a clinical or operational decision. It is a beautiful diagram. It bears almost no relationship to the experience of anyone who has actually tried to build healthcare AI at production scale.</p>
+<p>The reality is that healthcare data is not a pipeline. It is a delta — a constantly shifting landscape of partially overlapping, inconsistently formatted, legally constrained, and clinically meaningful data sources that were built by different organizations, for different purposes, over different decades, using different standards that were themselves implemented differently by every institution that adopted them. Claims data captures what was billed, not necessarily what happened clinically. EHR data captures what was documented, not necessarily what was observed. Imaging data captures what the scanner acquired, not necessarily what was diagnostically relevant. Wearable data captures what the sensor measured, not necessarily what it means in a clinical context. And the gaps between these sources — the data that is missing, the patient journey that falls between systems, the social determinant that never made it into any structured field — carry some of the most clinically important signal in the entire dataset.</p>
+<p>This chapter does not tell a pessimistic story. It tells an honest one. The organizations that build healthcare AI on a realistic understanding of their data — its limitations, its biases, its governance constraints, and its genuine richness — are the ones that produce models that work in production. The ones that build on the vendor slide are the ones that discover the gap between pilot performance and deployment performance, and spend the next eighteen months trying to understand why their model worked in the demo environment and failed in the real one.</p>
+<blockquote>
+<p><em>"The absence of data in healthcare is not noise. It is signal. And AI systems that treat it as noise produce models that fail in exactly the populations that need them most."</em></p>
+</blockquote>
+<p><img alt="The Healthcare Data Landscape" src="figures/e4d2b7e300397103bce431de6c2188330cf153b5.png" /></p>
+<p><em>Figure 3.1 — The Healthcare Data Landscape. Five major source categories, each with distinct standards, quality profiles, and AI readiness levels. No single source contains the complete patient picture.</em></p>
+<hr />
+<h2 id="topic-1-the-data-reality-messiness-missingness-and-the-myth-of-the-clean-pipeline">Topic 1 — The Data Reality: Messiness, Missingness, and the Myth of the Clean Pipeline<a class="headerlink" href="#topic-1-the-data-reality-messiness-missingness-and-the-myth-of-the-clean-pipeline" title="Permanent link">&para;</a></h2>
+<p>Claims data is the richest longitudinal record most payers and many health systems have for their populations — and it is retrospective, administratively coded, and subject to billing optimization pressures that have nothing to do with clinical accuracy. An ICD-10 diagnosis code on a claim tells you what a clinician documented in a way that would support reimbursement, which is not always the same thing as what they observed, what they suspected, or what actually caused the patient to present. The difference between a primary diagnosis and a secondary diagnosis on a claim can reflect clinical reality, coding convention, or the revenue cycle optimization priorities of the billing department. AI systems that treat claims codes as ground truth are learning a representation of clinical reality that has been filtered through an administrative process designed for payment, not for knowledge.</p>
+<p>EHR data is richer clinically — but presents a different class of problems. The structured fields in an EHR capture a fraction of what a clinical encounter contains. The rest lives in the free-text clinical note — the physician narrative, the nursing assessment, the social work observation — that carries the nuance, the uncertainty, the differential diagnosis, and the social context that no structured field was designed to hold. Studies consistently show that between sixty and seventy percent of clinically relevant information in a patient record exists only in unstructured text. An AI system that processes only the structured EHR fields is operating on less than half the available signal. And extracting the remainder requires clinical natural language processing — a field with its own complexity, its own validation challenges, and its own failure modes, which Chapter 4 addresses in depth.</p>
+<h3 id="the-missingness-problem">The Missingness Problem<a class="headerlink" href="#the-missingness-problem" title="Permanent link">&para;</a></h3>
+<p>Of all the data quality challenges in healthcare AI, missingness is the one most frequently underestimated and most consequentially mishandled. Standard machine learning approaches to missing data — mean imputation, median substitution, dropping incomplete records — are appropriate when data is missing at random. In healthcare, data is almost never missing at random. A blood pressure reading is missing because the patient did not present for their appointment. A smoking history is missing because the clinician did not ask, or the patient did not disclose, or the intake form was not completed. A social determinants of health assessment is missing because the health system does not systematically collect it. Each of these missingness patterns carries clinical information. Imputing a missing blood pressure reading with the population mean does not just introduce statistical error — it erases the clinical signal that the patient was not being monitored, which may be the most important thing the model needs to know.</p>
+<p>The correct approach to missingness in healthcare AI is not imputation. It is interrogation. Before any missing value strategy is applied, the analyst must ask: why is this value missing? Is the missingness itself predictive of the outcome I am modeling? Is it correlated with demographic or socioeconomic variables in ways that could introduce bias? Answers to these questions determine not just the imputation strategy but the entire feature engineering approach — and often reveal data quality issues in the source system that no amount of downstream modeling can compensate for.</p>
+<h3 id="the-standards-reality">The Standards Reality<a class="headerlink" href="#the-standards-reality" title="Permanent link">&para;</a></h3>
+<p>FHIR R4 represents the most significant advance in healthcare data interoperability in a generation — and its real-world implementation is substantially more complex than its specification suggests. Every major EHR vendor implements FHIR profiles differently. Epic's FHIR API exposes a specific subset of its data model through specific resource types with specific extensions. Oracle Health implements a different subset with different extension conventions. A FHIR integration that works against one vendor's API requires meaningful adaptation to work against another's. The standard provides a common language. It does not provide a common dialect.</p>
+<p>HL7 v2 messages — the older messaging standard that still dominates hospital ADT feeds, lab result delivery, and order communications — present a different challenge. HL7 v2 is enormously flexible, which means that every institution has implemented it slightly differently. The same segment in an HL7 v2 message may carry different content, in different fields, using different local codes, depending on which hospital system sent it and which decade their interface engine was configured. Parsing HL7 v2 at scale across multiple institutions requires institution-specific mapping tables, continuous maintenance as source systems change, and a tolerance for edge cases that no specification document fully anticipates. DICOM, the standard for medical imaging data, adds a further dimension — its metadata headers are inconsistently populated across institutions and equipment manufacturers, creating normalization challenges that imaging AI teams spend significant engineering effort addressing before any model training begins.</p>
+<blockquote>
+<p><strong>Expert Note — Data Cleaning as Domain Expertise</strong></p>
+<p>In healthcare AI, data cleaning is not a preprocessing step. It is a domain expertise exercise. Every transformation applied to raw healthcare data — every imputation, every normalization, every mapping decision — embeds a clinical assumption. Those assumptions must be made explicit, documented, and validated by someone with both technical and clinical knowledge. The analyst who cleans the data without clinical input is making clinical decisions without clinical accountability.</p>
+</blockquote>
+<hr />
+<h2 id="topic-2-data-challenges-for-ai-bias-drift-poverty-and-the-federated-response">Topic 2 — Data Challenges for AI: Bias, Drift, Poverty, and the Federated Response<a class="headerlink" href="#topic-2-data-challenges-for-ai-bias-drift-poverty-and-the-federated-response" title="Permanent link">&para;</a></h2>
+<p>The data challenges facing healthcare AI are not simply engineering problems to be solved with better pipelines and larger compute budgets. They are epistemological problems — challenges in how AI systems come to know what they know, and whether what they know is actually true for the populations they will serve. Six structural challenges define this landscape, and understanding each of them is a prerequisite for building models that generalize beyond the training environment.</p>
+<p><img alt="The Healthcare AI Data Challenge Map" src="figures/67f5352aacf07b55ab3945f5697f78e7e5047181.png" /></p>
+<p><em>Figure 3.2 — The Healthcare AI Data Challenge Map. Six structural data challenges that determine whether a model generalizes to production populations or fails silently on the patients who need it most.</em></p>
+<h3 id="class-imbalance-and-rare-disease-modeling">Class Imbalance and Rare Disease Modeling<a class="headerlink" href="#class-imbalance-and-rare-disease-modeling" title="Permanent link">&para;</a></h3>
+<p>Healthcare outcomes are inherently imbalanced. Sepsis affects a small fraction of hospital admissions. Rare diseases affect a tiny fraction of the population. Even common conditions like myocardial infarction represent a minority of emergency department presentations. A model trained on an imbalanced dataset without explicit handling of that imbalance will learn, quite rationally, that the best strategy is to predict the majority class. A sepsis prediction model that predicts "no sepsis" for every patient achieves impressive accuracy on a dataset where ninety-five percent of patients do not develop sepsis — and is completely useless clinically. Addressing class imbalance in healthcare AI requires a combination of resampling strategies, cost-sensitive learning approaches, and — critically — evaluation metrics that reflect clinical priorities rather than statistical convenience. Accuracy is almost never the right metric for a healthcare AI model. Sensitivity, specificity, positive predictive value, and the clinical cost asymmetry between false positives and false negatives are the metrics that matter.</p>
+<h3 id="population-bias-and-the-generalization-gap">Population Bias and the Generalization Gap<a class="headerlink" href="#population-bias-and-the-generalization-gap" title="Permanent link">&para;</a></h3>
+<p>The majority of published healthcare AI research is conducted on data from large academic medical centers — institutions with sophisticated EHR implementations, high data quality standards, and patient populations that skew toward insured, educated, and urban demographics. The models produced from this research are then applied to community hospitals, rural health systems, federally qualified health centers, and Medicaid populations where the patient demographics, the clinical coding practices, the data quality, and the disease presentation patterns are systematically different. The result is a generalization gap — a measurable decline in model performance when a system moves from the population it was trained on to the population it is actually deployed to serve.</p>
+<p>This gap is not an accident. It is a predictable consequence of training data that does not represent the deployment population. Addressing it requires either retraining on locally representative data — which requires data access, computational resources, and clinical validation capacity that many deployment sites do not have — or building models with explicit domain adaptation capabilities that can adjust to new populations with minimal additional labeled data. Neither solution is straightforward. Both are more tractable when the problem is acknowledged from the beginning of the model development process rather than discovered at deployment.</p>
+<h3 id="data-poverty-and-the-equity-imperative">Data Poverty and the Equity Imperative<a class="headerlink" href="#data-poverty-and-the-equity-imperative" title="Permanent link">&para;</a></h3>
+<p>Data poverty is the condition in which certain patient populations are systematically underrepresented in healthcare datasets — not because they do not exist or do not experience disease, but because they interact with the healthcare system less frequently, less consistently, and through channels that generate less structured data. Communities experiencing data poverty include uninsured and underinsured populations whose interactions with the healthcare system are episodic and emergency-driven rather than continuous and preventive. They include populations with historical reasons to distrust medical institutions whose data is sparse because engagement is low. They include rural populations whose geographic isolation limits access to the data-generating clinical infrastructure that urban populations take for granted.</p>
+<p>The consequence for AI is direct and serious: the populations most in need of AI-assisted care are the ones least well represented in the training data used to build that care. A population health AI system trained on commercially insured data will systematically underestimate risk in Medicaid populations. A diagnostic AI trained on data from tertiary academic centers will perform less well on patients whose disease presentations reflect the comorbidity profiles and social determinants common in underserved communities. Data poverty does not just produce models that perform poorly on certain populations. It produces models that fail invisibly — that appear to work on aggregate metrics while systematically underserving the patients whose outcomes are most dependent on getting the prediction right.</p>
+<h3 id="federated-learning-a-partial-response">Federated Learning: A Partial Response<a class="headerlink" href="#federated-learning-a-partial-response" title="Permanent link">&para;</a></h3>
+<p>Federated learning has emerged as one of the most promising technical responses to the interrelated challenges of data scarcity, institutional privacy constraints, and population underrepresentation. The core idea is elegant: instead of centralizing patient data from multiple institutions into a single training dataset — a process that raises significant privacy, governance, and regulatory concerns — federated learning trains a global model by distributing the training process across participating institutions. Each institution trains a local model update on its own data. Only the model weights — not the underlying patient records — are shared with a central aggregation server. The server combines the local updates into a global model and distributes it back to participating institutions for the next training round.</p>
+<p><img alt="Federated Learning Architecture in Healthcare" src="figures/bf4a18d48f07d6a0b0411d78353ecfa2b59e52dc.png" /></p>
+<p><em>Figure 3.3 — Federated Learning Architecture in Healthcare. Model weights travel between institutions and the aggregation server. Raw patient data never leaves the originating institution — addressing both privacy and governance constraints simultaneously.</em></p>
+<p>The privacy advantages of federated learning are significant. Patient data remains within the institutional perimeter. No raw records cross organizational or jurisdictional boundaries. The approach is compatible with HIPAA, GDPR, and the data use agreement frameworks that govern most healthcare data sharing arrangements. For rare disease research, where no single institution has sufficient cases to train a generalizable model, federated learning across a consortium of sites can produce models that would be impossible to build from any single institution's data alone.</p>
+<p>The limitations are equally real. Federated models reflect a weighted average of participating institutions — which means they may not perform optimally for any single institution's specific patient population. Communication overhead between participants and the aggregation server adds complexity and latency to the training process. And the security of the aggregation process itself requires careful attention — model weight updates can, under certain attack conditions, be used to infer properties of the underlying training data, a vulnerability known as model inversion that federated learning does not fully eliminate. Federated learning is not a complete solution to the data challenges of healthcare AI. It is a meaningful partial solution that, combined with other approaches, substantially expands what is possible within the constraints of the domain.</p>
+<blockquote>
+<p><strong>Expert Note — On Synthetic Data</strong></p>
+<p>For scenarios where even federated access to real patient data is unavailable — rare disease modeling, adversarial robustness testing, algorithm development in data-poor environments — high-quality synthetic data generation is emerging as a production tool. Generative adversarial networks, variational autoencoders, and diffusion-based approaches can produce synthetic patient records that are statistically representative of real populations without carrying re-identification risk. The conditions under which synthetic training data produces models that generalize to real clinical populations are still being actively researched — but the evidence is sufficiently promising that organizations with serious data access constraints should be evaluating synthetic data as part of their AI development strategy.</p>
+</blockquote>
+<hr />
+<h2 id="topic-3-data-governance-as-architecture-privacy-lineage-and-the-synthetic-bridge">Topic 3 — Data Governance as Architecture: Privacy, Lineage, and the Synthetic Bridge<a class="headerlink" href="#topic-3-data-governance-as-architecture-privacy-lineage-and-the-synthetic-bridge" title="Permanent link">&para;</a></h2>
+<p>Every conversation about healthcare AI data eventually arrives at governance — and in most organizations, that arrival is experienced as an interruption. The data science team has built something promising. The governance review surfaces a consent question, a de-identification requirement, a data use agreement limitation, or an audit trail gap that was never considered in the original design. The project pauses. The timeline extends. The organization concludes, incorrectly, that governance is the enemy of innovation.</p>
+<p>This is exactly backwards. Data governance in healthcare AI is not an interruption to the architecture. It is the architecture. The access controls determine which data the model can train on. The consent framework determines which patients are represented in the training data. The de-identification standard determines what analytical value the data retains after privacy protection is applied. The lineage tracking system determines whether the model can be audited, validated, and defended when a regulator or a clinical governance committee asks to understand how it was built. Organizations that design their AI systems without governance built in from the beginning do not save time. They borrow it — at high interest rates — from the compliance and validation work that inevitably comes due before any clinical deployment can occur.</p>
+<p><img alt="The Healthcare AI Data Governance Stack" src="figures/6a2695369f5a0d6a4b5b900ddd6e89e974b26138.png" /></p>
+<p><em>Figure 3.4 — The Healthcare AI Data Governance Stack. Six layers from raw data source to AI model governance — each layer a prerequisite for the layer above it. Governance is not overhead. It is the load-bearing structure.</em></p>
+<h3 id="de-identification-and-the-hipaa-framework">De-identification and the HIPAA Framework<a class="headerlink" href="#de-identification-and-the-hipaa-framework" title="Permanent link">&para;</a></h3>
+<p>HIPAA provides two pathways for de-identifying protected health information for research and AI development purposes. Safe Harbor de-identification removes eighteen specific categories of identifiers — names, geographic subdivisions smaller than a state, dates more specific than year for patients over eighty-nine, phone numbers, email addresses, social security numbers, and eleven additional categories — and provides a reasonable assurance of de-identification that is operationally straightforward to implement and audit. Expert Determination de-identification applies statistical and scientific methods to demonstrate that the risk of identifying an individual from the remaining data is very small — a standard that can preserve more analytical utility than Safe Harbor but requires qualified expert certification and ongoing risk assessment.</p>
+<p>Neither de-identification pathway is a complete solution to re-identification risk, particularly as the richness of auxiliary data sources grows. A de-identified patient record combined with publicly available geographic, demographic, and behavioral data from consumer sources can, under certain conditions, be re-identified with surprising accuracy. The governance implication is that de-identification is not a one-time process applied at data extraction. It is an ongoing risk management activity that must account for the evolving landscape of auxiliary data that could be combined with the de-identified dataset to enable re-identification.</p>
+<h3 id="data-lineage-and-the-audit-imperative">Data Lineage and the Audit Imperative<a class="headerlink" href="#data-lineage-and-the-audit-imperative" title="Permanent link">&para;</a></h3>
+<p>Data lineage — the end-to-end tracking of where data originated, how it was transformed, what decisions it influenced, and what outcomes resulted — is the governance capability that makes healthcare AI auditable, reproducible, and defensible. FDA 21 CFR Part 11 requires that electronic records in regulated processes be attributable and accurate. EU MDR requires that manufacturers maintain technical documentation demonstrating the evidence base for clinical claims. Both requirements extend naturally to AI systems — which means that the training data, the feature engineering transformations, the model version, the validation methodology, and the deployment configuration must all be captured in a lineage system that can be queried by a regulatory auditor, a clinical governance committee, or a quality engineer investigating an unexpected model behavior.</p>
+<p>Building data lineage infrastructure is not glamorous work. It does not appear in AI research papers or conference presentations. But it is the work that separates healthcare AI systems that can be deployed in regulated environments from those that can only be demonstrated in research settings. Organizations that invest in lineage tooling — whether through platforms like Apache Atlas, DataHub, or purpose-built regulatory documentation systems — are making an investment that pays dividends across every AI project that follows, because the infrastructure is reusable and the alternative — reconstructing lineage retroactively when a regulator asks for it — is far more expensive and far less reliable.</p>
+<blockquote>
+<p><strong>Expert Note — Governance as Competitive Advantage</strong></p>
+<p>Organizations that treat data governance as a compliance burden will always experience it as friction. Organizations that treat it as architectural infrastructure will experience it as a competitive advantage — because their AI systems can be deployed, validated, scaled, and defended in regulated environments that governance-light competitors cannot enter.</p>
+</blockquote>
+<hr />
+<h2 id="chapter-close-the-data-foundation-everything-else-requires">Chapter Close: The Data Foundation Everything Else Requires<a class="headerlink" href="#chapter-close-the-data-foundation-everything-else-requires" title="Permanent link">&para;</a></h2>
+<p>Healthcare data is not a problem to be solved before the real work of AI begins. It is the medium in which healthcare AI exists. Every model architecture decision, every training strategy, every validation approach, every deployment configuration is shaped by the specific character of the data it operates on — its sources, its standards, its quality profile, its governance constraints, and its structural biases. The practitioners who understand this deeply — who can look at a dataset and see not just its statistical properties but its clinical meaning, its institutional provenance, its regulatory context, and its equity implications — are the ones who build healthcare AI that works when it matters.</p>
+<p>The chapter that follows examines the semantic layer that gives this data its meaning — the coding systems, clinical terminologies, and natural language processing approaches that transform raw healthcare records into the structured, queryable, AI-ready knowledge representations that every subsequent chapter in this book depends on. Understanding the data reality is the first half of the foundation. Understanding what the data means is the second.</p>
+<hr />
+<hr />
+<p><em>Chapter 3 · Preview edition. The complete book is in progress — <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">share feedback</a>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-anatomy-of-the-healthcare-enterprise/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 2 — Anatomy of a Healthcare Enterprise">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Chapter 2 — Anatomy of a Healthcare Enterprise
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Preview edition — a living document. Feedback welcome via <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">GitHub Issues</a>.
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zkumar/healthcare-ai-book-preview" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

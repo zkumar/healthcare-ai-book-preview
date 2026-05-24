@@ -1,0 +1,789 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A preview of the first chapters of a book on healthcare AI — regulation, clinical practice, governance, and equity.">
+      
+      
+      
+        <link rel="canonical" href="https://zkumar.github.io/healthcare-ai-book-preview/02-anatomy-of-the-healthcare-enterprise/">
+      
+      
+        <link rel="prev" href="../01-the-regulated-machine/">
+      
+      
+        <link rel="next" href="../03-the-data-reality/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 2 — Anatomy of a Healthcare Enterprise - Healthcare AI — Preview</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-anatomy-of-a-healthcare-enterprise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Healthcare AI — Preview" class="md-header__button md-logo" aria-label="Healthcare AI — Preview" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Healthcare AI — Preview
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2 — Anatomy of a Healthcare Enterprise
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Healthcare AI — Preview" class="md-nav__button md-logo" aria-label="Healthcare AI — Preview" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Healthcare AI — Preview
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-the-regulated-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1 — The Regulated Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2 — Anatomy of a Healthcare Enterprise
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2 — Anatomy of a Healthcare Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-five-worlds-inside-one-industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening: Five Worlds Inside One Industry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-1-five-ecosystems-one-converging-patient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 1 — Five Ecosystems, One Converging Patient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 1 — Five Ecosystems, One Converging Patient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sector-integration-reality-where-consumer-data-is-landing-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sector Integration Reality — Where Consumer Data Is Landing Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-2-payers-providers-and-medtech-where-ai-meets-workflow-and-regulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 2 — Payers, Providers and MedTech: Where AI Meets Workflow and Regulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 2 — Payers, Providers and MedTech: Where AI Meets Workflow and Regulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-payer-ai-stack-from-claims-to-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Payer AI Stack — From Claims to Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-provider-ai-stack-ehr-integration-or-irrelevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Provider AI Stack — EHR Integration or Irrelevance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-medtech-ai-stack-regulated-by-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The MedTech AI Stack — Regulated by Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-3-pharma-drug-discovery-and-the-ai-accountability-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 3 — Pharma, Drug Discovery and the AI Accountability Question
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 3 — Pharma, Drug Discovery and the AI Accountability Question">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-ai-is-actually-doing-in-drug-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What AI Is Actually Doing in Drug Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-accountability-question-that-cannot-be-deferred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Accountability Question That Cannot Be Deferred
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-close-five-sectors-one-imperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Close: Five Sectors, One Imperative
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-the-data-reality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3 — The Data Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-2-anatomy-of-a-healthcare-enterprise">Chapter 2 — Anatomy of a Healthcare Enterprise<a class="headerlink" href="#chapter-2-anatomy-of-a-healthcare-enterprise" title="Permanent link">&para;</a></h1>
+<p><em>Five ecosystems, five AI maturity curves — and one converging patient at the center of all of them</em></p>
+<blockquote>
+<p><strong>What This Chapter Covers:</strong> The five distinct sectors of the healthcare enterprise and their AI maturity curves · Why payer, provider, MedTech, pharma, and consumer health each require a different deployment strategy · How the self-tracking patient is restructuring the data architecture across all five sectors · Why drug discovery represents AI's most consequential frontier — and its sharpest accountability challenge.</p>
+<p><strong>Why It Matters:</strong> A solution designed for a payer's claims analytics engine cannot be copy-pasted into a medical device manufacturer's regulatory lifecycle. Understanding the anatomy of each sector — its data, its workflow, its regulatory surface, and its AI readiness — is the prerequisite for building anything that reaches patients at scale.</p>
+</blockquote>
+<hr />
+<h2 id="opening-five-worlds-inside-one-industry">Opening: Five Worlds Inside One Industry<a class="headerlink" href="#opening-five-worlds-inside-one-industry" title="Permanent link">&para;</a></h2>
+<p>Healthcare looks, from the outside, like a single industry. It is not. It is five distinct enterprises — each with its own economic model, its own regulatory obligations, its own data architecture, and its own deeply held assumptions about what technology is for and who gets to deploy it. A payer is fundamentally an actuarial and risk-management organization. A hospital is a clinical operations organization. A medical device manufacturer is a regulated product company. A pharmaceutical organization is a research and commercial enterprise simultaneously. And the consumer health sector is something entirely new — a data-generating ecosystem that none of the other four planned for and all of them are now trying to integrate. The mistake that most technology organizations make when they enter healthcare is treating these five worlds as variations of the same problem. They are not.</p>
+<p>What is changing is that these five worlds are beginning to converge around a single shared asset: the patient who tracks their own health. The continuous streams of biometric data, behavioral signals, and self-reported health information being generated by wearables, remote monitoring devices, mental health applications, and consumer health platforms are flowing into clinical, payer, pharma, and MedTech systems in ways that none of those systems were designed to absorb. This convergence is not a future scenario. It is a present operational reality that every sector is navigating with varying degrees of readiness, enthusiasm, and regulatory anxiety.</p>
+<p><img alt="The Five Healthcare Ecosystems" src="figures/345e5276a355513b11c0804300ac268788e53a7b.png" /></p>
+<p><em>Figure 2.1 — The Five Healthcare Ecosystems. Each sector operates on distinct data, regulatory, and AI maturity foundations. All five are converging around the continuously monitored, health-aware patient.</em></p>
+<hr />
+<h2 id="topic-1-five-ecosystems-one-converging-patient">Topic 1 — Five Ecosystems, One Converging Patient<a class="headerlink" href="#topic-1-five-ecosystems-one-converging-patient" title="Permanent link">&para;</a></h2>
+<p>The payer ecosystem is, at its core, a prediction business. The accuracy with which a health insurer can forecast which members will generate the highest costs in the next twelve months — and intervene effectively before those costs materialize — determines the financial performance of the entire enterprise. This makes payers, almost by necessity, early adopters of data and analytics technology. Most large payers have been running predictive risk models for over a decade. What they have not yet built, in most cases, is the intelligence layer that connects those models to meaningful clinical action at the population level.</p>
+<p>The provider ecosystem faces a different problem. Hospitals and health systems have the clinical data but face the challenge of making that data actionable at the point of care without adding cognitive burden to clinicians who are already operating at or beyond capacity. The electronic health record is the central nervous system of the provider world, and Epic dominates it with a market share that makes it the operating system of American hospital medicine. Any AI that cannot integrate meaningfully into Epic will not achieve clinical adoption regardless of how accurate it is in a research setting.</p>
+<blockquote>
+<p><em>"The AI systems that fail in healthcare almost always fail because they were designed for one world and deployed into another."</em></p>
+</blockquote>
+<p>The MedTech ecosystem introduces a layer of regulatory complexity that is qualitatively different from what payers and providers face. When a medical device manufacturer embeds AI into a device, it is creating a regulated artifact with its own classification, its own risk-management obligation, and its own post-market surveillance requirement. Consumer health sits outside the traditional regulatory perimeter — and that is precisely what makes it both an opportunity and a governance challenge.</p>
+<p><img alt="The Self-Tracking Patient" src="figures/7a7ef3ed4fb287447c8cfc816d935e1bfce03bdf.png" /></p>
+<p><em>Figure 2.2 — The Self-Tracking Patient. Consumer-generated health data is flowing simultaneously into payer, provider, pharma, and MedTech systems — creating both an integration opportunity and a governance imperative.</em></p>
+<p>What ties all five sectors together at this moment is the arrival of the health-aware, self-tracking patient as a structural force rather than a demographic segment. This patient is not simply a consumer of healthcare services. They are a continuous generator of health data — biometric, behavioral, environmental, and self-reported — that the clinical system sees only in episodic snapshots. A patient with hypertension whose smartwatch has recorded elevated resting heart rate variability for six consecutive weeks before their next clinical appointment is carrying intelligence that their cardiologist does not have access to. The quantified-self movement did not ask permission to join the healthcare enterprise. It simply arrived.</p>
+<h3 id="sector-integration-reality-where-consumer-data-is-landing-today">Sector Integration Reality — Where Consumer Data Is Landing Today<a class="headerlink" href="#sector-integration-reality-where-consumer-data-is-landing-today" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>Where consumer health data is entering today</th>
+<th>Governance maturity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Payers</strong></td>
+<td>Wearable data feeding wellness incentive programs and emerging risk-stratification inputs</td>
+<td>Early — incentive frameworks ahead of clinical-grade governance</td>
+</tr>
+<tr>
+<td><strong>Providers</strong></td>
+<td>Remote-monitoring program pilots; periodic syncs into the EHR</td>
+<td>Early — workflow integration outpacing data-quality and liability frameworks</td>
+</tr>
+<tr>
+<td><strong>Pharma</strong></td>
+<td>Patient-reported outcomes and digital biomarkers entering real-world evidence pipelines</td>
+<td>Emerging — regulatory expectations forming around digital endpoints</td>
+</tr>
+<tr>
+<td><strong>MedTech</strong></td>
+<td>Devices designed to live simultaneously in clinical and consumer ecosystems</td>
+<td>Mixed — depends on FDA classification of the device and its companion app</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Expert Note — Governance Lag</strong></p>
+<p>None of these integrations has a fully mature governance framework yet. Each sector is accepting consumer-generated data faster than it is defining what counts as clinical-grade signal, who is liable for acting on it, and how patient consent travels with the data once it crosses sector boundaries.</p>
+</blockquote>
+<hr />
+<h2 id="topic-2-payers-providers-and-medtech-where-ai-meets-workflow-and-regulation">Topic 2 — Payers, Providers and MedTech: Where AI Meets Workflow and Regulation<a class="headerlink" href="#topic-2-payers-providers-and-medtech-where-ai-meets-workflow-and-regulation" title="Permanent link">&para;</a></h2>
+<p>If there is a single principle that separates successful healthcare AI deployments from unsuccessful ones across the payer, provider, and MedTech sectors, it is this: the deployment environment is not a server. It is a human workflow. And human workflows in healthcare are among the most complex, politically sensitive, and cognitively loaded environments that any technology has ever been asked to enter.</p>
+<p><img alt="The Payer-Provider-MedTech AI Stack" src="figures/527b5d7d4abe165969440bf121e81477601b8b03.png" /></p>
+<p><em>Figure 2.3 — The Payer-Provider-MedTech AI Stack. Three sector-specific architectures converging on a shared foundation of FHIR interoperability, AI governance, and human-in-the-loop design.</em></p>
+<h3 id="the-payer-ai-stack-from-claims-to-intelligence">The Payer AI Stack — From Claims to Intelligence<a class="headerlink" href="#the-payer-ai-stack-from-claims-to-intelligence" title="Permanent link">&para;</a></h3>
+<p>The payer AI journey begins with data — and payer data, for all its limitations, is extraordinarily rich in retrospective signal. Claims data captures virtually every clinical encounter that results in a billable event. Pharmacy data captures medication adherence. And increasingly, wearable and remote-monitoring data is entering payer data lakes through wellness program integrations. The payer AI systems generating measurable ROI are those that close the loop — from risk identification to care manager outreach to intervention tracking to outcome measurement — within a single orchestrated workflow.</p>
+<p>Medicare Advantage has become the proving ground for payer AI in the United States. The Star Ratings system creates direct financial incentives for quality performance. HEDIS measure gaps translate into revenue at risk. HCC coding accuracy determines risk adjustment payments that can represent hundreds of millions of dollars annually for large plans. In this environment, AI is not a productivity tool. It is a financial performance mechanism.</p>
+<h3 id="the-provider-ai-stack-ehr-integration-or-irrelevance">The Provider AI Stack — EHR Integration or Irrelevance<a class="headerlink" href="#the-provider-ai-stack-ehr-integration-or-irrelevance" title="Permanent link">&para;</a></h3>
+<p>For providers, the EHR is not a data repository. It is the workflow. Every clinical decision support tool, every diagnostic AI, every ambient documentation system must integrate into the EHR workflow or it will not be used. The AI systems breaking through alert fatigue are not the ones generating more alerts. They are the ones generating fewer, better-calibrated signals — surfacing only the findings that change clinical management.</p>
+<h3 id="the-medtech-ai-stack-regulated-by-design">The MedTech AI Stack — Regulated by Design<a class="headerlink" href="#the-medtech-ai-stack-regulated-by-design" title="Permanent link">&para;</a></h3>
+<p>Medical device AI carries a regulatory surface area that grows with every capability added to the product. The MedTech companies building AI most successfully are those that have integrated regulatory science, software quality engineering, and clinical evidence generation into a single product lifecycle process. IEC 62304 defines how they build it. ISO 14971 defines how they manage its risk. FDA SaMD guidance defines what evidence they need to support it.</p>
+<blockquote>
+<p><strong>Expert Note — The Workflow Is the Product</strong></p>
+<p>Across all three sectors, the organizations producing durable AI deployments share one characteristic: they treat the human workflow as the primary design constraint, not the model accuracy metric. The workflow is the product. Everything else is infrastructure.</p>
+</blockquote>
+<hr />
+<h2 id="topic-3-pharma-drug-discovery-and-the-ai-accountability-question">Topic 3 — Pharma, Drug Discovery and the AI Accountability Question<a class="headerlink" href="#topic-3-pharma-drug-discovery-and-the-ai-accountability-question" title="Permanent link">&para;</a></h2>
+<p>Of all the claims being made about generative AI in healthcare, the ones being made in pharmaceutical drug discovery are simultaneously the most extraordinary and the most credible. This is not a domain where AI is being used to write better emails or summarize clinical notes. It is a domain where AI is being used to discover new drugs — to identify therapeutic targets that human scientists would not have found, to generate molecular structures that have never existed in nature, and to predict the biological behavior of compounds with a speed and breadth that traditional experimental methods cannot approach.</p>
+<p><img alt="The AI-Accelerated Drug Discovery Pipeline" src="figures/cd8cde0c91ad940d1633d144a54a323344414363.png" /></p>
+<p><em>Figure 2.4 — The AI-Accelerated Drug Discovery Pipeline. GenAI is compressing decade-long timelines across discovery and preclinical phases — while simultaneously raising unresolved questions about traceability, validation, and regulatory accountability.</em></p>
+<h3 id="what-ai-is-actually-doing-in-drug-discovery">What AI Is Actually Doing in Drug Discovery<a class="headerlink" href="#what-ai-is-actually-doing-in-drug-discovery" title="Permanent link">&para;</a></h3>
+<p>The AlphaFold moment changed the conversation about AI in drug discovery permanently. When DeepMind's protein structure prediction system achieved near-experimental accuracy in 2020, it demonstrated that a computational system could solve a problem that had occupied structural biologists for half a century. Since AlphaFold, foundation models trained on genomic sequences and chemical structures are generating novel drug candidates at a speed that no wet lab can match. And the health-aware, self-tracking patient population is now providing real-world evidence that is beginning to enter pharmacovigilance systems in ways not possible five years ago.</p>
+<h3 id="the-accountability-question-that-cannot-be-deferred">The Accountability Question That Cannot Be Deferred<a class="headerlink" href="#the-accountability-question-that-cannot-be-deferred" title="Permanent link">&para;</a></h3>
+<p>When a generative AI system proposes a novel molecular structure, the question of who is responsible for validating that proposal does not have a clean answer yet. FDA 21 CFR Part 11 requires that electronic records in regulated processes be attributable, accurate, contemporaneous, original, and legible. When the record is a generative AI output, what does attributability mean? The companies navigating this most effectively are those that have invested in AI documentation infrastructure — capturing the model version, the input data, the output generated, the human review, and the final decision made — for every AI-influenced decision in a regulated workflow.</p>
+<blockquote>
+<p><strong>Expert Note — Documentation Before Guidance</strong></p>
+<p>AI systems are infusing into drug-development workflows faster than governance frameworks can validate them. The organizations building AI documentation infrastructure now are the ones that will have defensible regulatory submissions when agency guidance catches up.</p>
+</blockquote>
+<hr />
+<h2 id="chapter-close-five-sectors-one-imperative">Chapter Close: Five Sectors, One Imperative<a class="headerlink" href="#chapter-close-five-sectors-one-imperative" title="Permanent link">&para;</a></h2>
+<p>The anatomy of a healthcare enterprise is not a single organism. It is five distinct organisms — each with its own metabolism, its own immune system, and its own relationship with the technology being introduced into it. But across all five sectors, the same imperative is asserting itself. The patient — no longer passive, no longer episodic, increasingly self-aware and self-monitoring — is generating data that every sector needs and none was fully designed to receive.</p>
+<blockquote>
+<p><em>"The health-aware patient did not ask permission to join the healthcare enterprise. They simply arrived — and every sector is now deciding what to do with what they brought."</em></p>
+</blockquote>
+<hr />
+<hr />
+<p><em>Chapter 2 · Preview edition. The complete book is in progress — <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">share feedback</a>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-the-regulated-machine/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chapter 1 — The Regulated Machine">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Chapter 1 — The Regulated Machine
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-the-data-reality/" class="md-footer__link md-footer__link--next" aria-label="Next: Chapter 3 — The Data Reality">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Chapter 3 — The Data Reality
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Preview edition — a living document. Feedback welcome via <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">GitHub Issues</a>.
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zkumar/healthcare-ai-book-preview" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
