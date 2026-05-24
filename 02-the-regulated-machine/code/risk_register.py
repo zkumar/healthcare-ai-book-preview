@@ -1,43 +1,9 @@
-"""ISO 14971 Risk Register — illustrative implementation.
+"""Minimal healthcare AI risk-register example for Chapter 2.
 
-# For Google Colab compatibility:
-# !pip install pandas
-
-# In a production system, Excel export, risk heat-map visualization,
-# and regulatory report generation would involve external libraries
-# (e.g., openpyxl, matplotlib, custom PDF generators) or integrations
-# with dedicated risk management software. For this didactic example,
-# we focus on the core data model and logic, with DataFrame output
-# as a flexible intermediate representation.
-
-
-
-Status: TESTED and Colab-compatible. This practitioner code provides an illustrative implementation of an ISO 14971 Risk Register.
-
-Key abstractions for a production system:
-  - **Excel Export/Visualization:** In a real-world scenario, this would integrate with libraries like `openpyxl` for Excel output or `matplotlib`/`seaborn` for risk heat-map visualizations.
-  - **Regulatory Report Generation:** Production systems would involve custom PDF generators or integration with specialized regulatory reporting tools.
-  - **Full CMS HCC V28 Model Coefficients:** For comprehensive risk stratification, a production system would incorporate the full set of CMS HCC V28 model coefficients.
-  - **HEDIS Care-Gap Rules:** Real-world care gap analysis would involve integrating with extensive HEDIS care-gap rulesets.
-  - **FHIR Server Integration:** Robust FHIR bundle parsing would involve direct integration with FHIR servers for data retrieval and validation.
-  - **UMLS Linker and Negspacy Implementation:** Advanced clinical NLP would leverage a fully configured UMLS linker and comprehensive negspacy rules for negation detection.
-  - **OMOP Vocabulary Download:** Production systems would dynamically download and manage OMOP vocabularies for semantic traversal.
-  - **LLM-based Semantic Scoring:** Requirements quality scoring would be enhanced with LLM-based semantic analysis.
-  - **External Connectors:** Traceability matrix generation would connect to external requirements management and test management tools.
-  - **Semantic Embedding Models:** Complaint clustering would utilize advanced semantic embedding models for more accurate grouping.
-  - **GUDID Schema Syncing:** UDI validation would involve real-time syncing with GUDID schemas.
-  - **PubMed API Integration:** CER literature screening would integrate with PubMed API for automated literature search.
-  - **Vector Database and LLM Integration:** Quality Brain RAG would leverage vector databases and LLMs for contextual retrieval.
-  - **NVD API Integration:** SBOM validation would integrate with NVD API for vulnerability data.
-  - **LLM-based STRIDE Generation:** Threat modeling would use LLMs to generate STRIDE threats.
-  - **LLM-based Natural Language Complaint Analysis:** MDR reportability would involve LLM-based analysis of complaints.
-  - **LLM-backed Content Generation:** PSUR generation would use LLMs for content creation.
-  - **LLM-based Clinical Context:** Care gap analysis would incorporate LLM-based clinical context.
-  - **Clinical NLP Pipelines:** Coding suggestions would utilize advanced clinical NLP pipelines.
-  - **Epic CDS Hooks Integration:** NEWS2 scoring would integrate with Epic CDS Hooks.
-  - **Jurisdiction-specific Reporting Rules:** Pharmacovigilance would adhere to specific regulatory reporting rules.
-  - **Specialized Statistical Software:** Trial design would use specialized statistical software.
-  - **MLOps Platform Integration:** Model registry would integrate with MLOps platforms for deployment and monitoring.
+The script teaches how hazards, harms, mitigations, residual risk, verification
+evidence, and review status can be represented in an auditable structure. It is
+a teaching implementation, not a substitute for an organization's formal quality
+management or compliance system.
 """
 from dataclasses import dataclass
 from enum import IntEnum
@@ -112,6 +78,28 @@ def test_risk_register_methods():
     df = register.to_dataframe()
     assert not df.empty
     assert "Hazard ID" in df.columns
+
+
+def test_evaluate_simplified_bp_control():
+    member = {
+        "member_id": "M001",
+        "age": 54,
+        "has_hypertension": True,
+        "hospice": False,
+        "blood_pressure_readings": [
+            {"date": "2024-01-15", "systolic": 142, "diastolic": 91},
+            {"date": "2024-06-10", "systolic": 128, "diastolic": 78},
+        ],
+    }
+    result = evaluate_simplified_bp_control(member)
+    assert result["eligible"] is True
+    assert result["meets_rule"] is True
+    assert result["evidence"]["date"] == "2024-06-10"
+
+    hospice_member = dict(member, hospice=True)
+    excluded = evaluate_simplified_bp_control(hospice_member)
+    assert excluded["eligible"] is False
+    assert excluded["reason"] == "Excluded: hospice flag present"
 
 
 # --- End Unit Tests ---
@@ -189,6 +177,53 @@ class RiskRegister:
         return [e for e in self.entries if e.residual_risk_level == "UNACCEPTABLE"]
 
 
+def evaluate_simplified_bp_control(member: dict) -> dict:
+    """Evaluate a simplified HEDIS-style blood-pressure-control rule.
+
+    This function is for education only. Official HEDIS specifications and
+    industrial quality engines include detailed value sets, enrollment windows,
+    encounter logic, exclusions, supplemental data rules, audit controls, and
+    certification requirements that are intentionally out of scope here.
+    """
+    if member.get("hospice"):
+        return {
+            "member_id": member.get("member_id"),
+            "eligible": False,
+            "meets_rule": False,
+            "reason": "Excluded: hospice flag present",
+            "evidence": None,
+        }
+
+    if member.get("age", 0) < 18 or not member.get("has_hypertension"):
+        return {
+            "member_id": member.get("member_id"),
+            "eligible": False,
+            "meets_rule": False,
+            "reason": "Not in denominator",
+            "evidence": None,
+        }
+
+    readings = sorted(member.get("blood_pressure_readings", []), key=lambda r: r["date"])
+    if not readings:
+        return {
+            "member_id": member.get("member_id"),
+            "eligible": True,
+            "meets_rule": False,
+            "reason": "No blood-pressure evidence",
+            "evidence": None,
+        }
+
+    latest = readings[-1]
+    controlled = latest["systolic"] < 140 and latest["diastolic"] < 90
+    return {
+        "member_id": member.get("member_id"),
+        "eligible": True,
+        "meets_rule": controlled,
+        "reason": "Controlled" if controlled else "Most recent blood pressure is above threshold",
+        "evidence": latest,
+    }
+
+
 def _example() -> RiskRegister:
     """Worked example: Sepsis Prediction AI — IEC 62304 Class C."""
     register = RiskRegister("Sepsis Early Warning AI", "IEC 62304 Class C")
@@ -213,6 +248,7 @@ if __name__ == "__main__":
     print("Running unit tests...")
     test_risk_scoring()
     test_risk_register_methods()
+    test_evaluate_simplified_bp_control()
     print("Unit tests passed.\n")
     register = _example()
     print("--- Example Risk Register ---")
@@ -225,4 +261,16 @@ if __name__ == "__main__":
             print(f"  - {r.hazard_id}: {r.hazard_description} (Score: {r.residual_risk_score})")
     else:
         print("No unacceptable risks identified.")
+    print("\n--- Simplified HEDIS-Style Rule Example ---")
+    hedis_member = {
+        "member_id": "M001",
+        "age": 54,
+        "has_hypertension": True,
+        "hospice": False,
+        "blood_pressure_readings": [
+            {"date": "2024-01-15", "systolic": 142, "diastolic": 91},
+            {"date": "2024-06-10", "systolic": 128, "diastolic": 78},
+        ],
+    }
+    print(evaluate_simplified_bp_control(hedis_member))
     print("\nHuman-in-the-loop: Risk Manager reviews and approves all risk classifications and controls.")

@@ -1,26 +1,9 @@
-"""Payer Risk Stratification Pipeline — illustrative implementation.
+"""Simplified payer risk-stratification example for Chapter 1.
 
-# For Google Colab compatibility:
-# !pip install pandas
-
-# In a production system, the full CMS HCC V28 model coefficients
-# would be loaded from a comprehensive dataset, and HEDIS care-gap rules
-# would be dynamically updated from official specifications. For this
-# didactic example, we use simplified, illustrative subsets and rules
-# to demonstrate the core logic of risk stratification and care gap identification.
-
-
-
-Status: UNTESTED. This is the simplified HCC-aware risk-stratification sketch
-from Chapter 2. Before this is referenced from chapter.md as a worked example
-it needs:
-  - the full CMS HCC V28 model coefficients (this file uses a 7-condition
-    illustrative subset; the production model has ~115 condition categories
-    with gender-age interaction terms, disease interaction adjustments, and
-    separate coefficients for new enrollees and institutional patients)
-  - unit tests covering RAF score boundaries and tier-assignment edges
-  - a worked example with a population larger than four members
-  - HEDIS care-gap rules verified against current measure year
+The script teaches how diagnosis codes, utilization, and care-gap rules can be
+converted into RAF-style scores, operational risk tiers, and reviewable member
+priorities. It is intentionally small so readers can study the logic of the
+workflow before applying full production code sets or measure-year rules.
 """
 from dataclasses import dataclass, field
 from typing import Optional

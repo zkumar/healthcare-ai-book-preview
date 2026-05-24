@@ -1,31 +1,13 @@
-"""FHIR R4 Bundle Parser — illustrative implementation.
+"""Minimal FHIR R4 Bundle parser for Chapter 3.
 
-# For Google Colab compatibility:
-# !pip install pandas
-
-# In a production system, FHIR bundles would typically be retrieved from a
-# FHIR server via a secure API, requiring authentication, pagination, and
-# robust error handling. For this didactic example, we use a synthetic
-# FHIR bundle directly embedded in the script to demonstrate the core
-# parsing logic without external dependencies. The parsing functions
-# are simplified to focus on key data extraction, with comments indicating
-# where more comprehensive error handling and FHIR version-specific logic
-# would be implemented.
-
-
-
-Status: UNTESTED. This is the function sketch from Chapter 3.
-Before this is referenced from chapter.md as a worked example it needs:
-  - unit tests against a checked-in sample bundle fixture
-  - a SMART-on-FHIR / OAuth 2.0 wrapper for live API use
-  - FHIR pagination handling (Bundle.link[rel=next])
-  - rate limiting and retry logic
-  - regulatory audit logging (who pulled what, when, for which model)
-  - profile validation (US Core, IPS, etc.) before downstream use
+The script teaches how Patient and Observation resources can be extracted from a
+FHIR bundle and converted into an analytical table while preserving identifiers,
+patient references, clinical codes, values, and units.
 """
 from __future__ import annotations
 
 import json
+import re
 from typing import Optional
 
 import pandas as pd
@@ -179,6 +161,73 @@ def _get_unit(resource: dict) -> Optional[str]:
     return vq.get("unit")
 
 
+def claim_row_to_fhir_claim(claim_row: dict) -> dict:
+    """Convert a minimal professional claim row into a FHIR Claim resource.
+
+    This is an educational mapping. Production claims-to-FHIR pipelines require
+    implementation-guide conformance, code-system validation, partner-specific
+    mapping rules, lineage, reconciliation, and error handling.
+    """
+    claim_id = claim_row["claim_id"]
+    return {
+        "resourceType": "Claim",
+        "id": claim_id,
+        "status": "active",
+        "type": {
+            "coding": [{
+                "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                "code": "professional",
+            }]
+        },
+        "use": "claim",
+        "patient": {"reference": f"Patient/{claim_row['member_id']}"},
+        "created": claim_row["service_date"],
+        "diagnosis": [{
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+                "coding": [{
+                    "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                    "code": claim_row["diagnosis_code"],
+                }]
+            },
+        }],
+        "item": [{
+            "sequence": 1,
+            "productOrService": {
+                "coding": [{
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": claim_row["procedure_code"],
+                }]
+            },
+            "servicedDate": claim_row["service_date"],
+            "net": {
+                "value": float(claim_row["charge_amount"]),
+                "currency": "USD",
+            },
+        }],
+    }
+
+
+def redact_phi(text: str) -> str:
+    """Redact obvious PHI-like patterns with regular expressions.
+
+    Regex redaction is useful for teaching and simple preprocessing, but it is
+    not sufficient as a production de-identification program. Real programs use
+    layered detection, human QA, governance, and privacy/legal review.
+    """
+    patterns = [
+        (r"\b[\w.%-]+@[\w.-]+\.[A-Za-z]{2,}\b", "[EMAIL]"),
+        (r"\b(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b", "[PHONE]"),
+        (r"\b\d{4}-\d{2}-\d{2}\b", "[DATE]"),
+        (r"\b\d{1,2}/\d{1,2}/\d{2,4}\b", "[DATE]"),
+        (r"\b(?:MRN|Medical Record Number)[:#\s-]*[A-Za-z0-9-]+\b", "[MRN]"),
+    ]
+    redacted = text
+    for pattern, replacement in patterns:
+        redacted = re.sub(pattern, replacement, redacted, flags=re.IGNORECASE)
+    return redacted
+
+
 # --- Unit Tests (for Colab and local execution) ---
 def test_parse_fhir_bundle():
     patients_df, obs_df = parse_fhir_bundle(SYNTHETIC_FHIR_BUNDLE)
@@ -234,6 +283,33 @@ def test_get_unit():
     assert _get_unit({"valueQuantity": {}}) is None
     assert _get_unit({}) is None
 
+
+def test_claim_row_to_fhir_claim():
+    claim = claim_row_to_fhir_claim({
+        "claim_id": "CLM1001",
+        "member_id": "example",
+        "service_date": "2024-03-15",
+        "diagnosis_code": "E11.9",
+        "procedure_code": "99213",
+        "charge_amount": 125.00,
+    })
+    assert claim["resourceType"] == "Claim"
+    assert claim["patient"]["reference"] == "Patient/example"
+    assert claim["diagnosis"][0]["diagnosisCodeableConcept"]["coding"][0]["code"] == "E11.9"
+    assert claim["item"][0]["productOrService"]["coding"][0]["code"] == "99213"
+
+
+def test_redact_phi():
+    note = "Call Jane at 555-123-4567 on 2024-03-15. MRN: ABC-123. Email jane@example.com."
+    redacted = redact_phi(note)
+    assert "555-123-4567" not in redacted
+    assert "2024-03-15" not in redacted
+    assert "jane@example.com" not in redacted
+    assert "[PHONE]" in redacted
+    assert "[DATE]" in redacted
+    assert "[EMAIL]" in redacted
+
+
 # --- End Unit Tests ---
 
 
@@ -246,6 +322,8 @@ if __name__ == "__main__":
     test_get_display()
     test_get_value()
     test_get_unit()
+    test_claim_row_to_fhir_claim()
+    test_redact_phi()
     print("Unit tests passed.\n")
 
     print("--- Example FHIR Bundle Parsing ---")
@@ -255,4 +333,20 @@ if __name__ == "__main__":
     print(patients_df.to_markdown(index=False))
     print("\nObservations DataFrame (first 5 rows):")
     print(obs_df[["loinc_code", "display", "value", "unit", "datetime"]].head().to_markdown(index=False))
-    print("\nHuman-in-the-loop: Data Engineer validates FHIR bundle structure; Clinical Informaticist validates extracted data elements.")
+    print("\n--- Claims-to-FHIR Mapping Example ---")
+    sample_claim = {
+        "claim_id": "CLM1001",
+        "member_id": "example",
+        "service_date": "2024-03-15",
+        "diagnosis_code": "E11.9",
+        "procedure_code": "99213",
+        "charge_amount": 125.00,
+    }
+    fhir_claim = claim_row_to_fhir_claim(sample_claim)
+    print(json.dumps(fhir_claim, indent=2))
+
+    print("\n--- PHI Redaction Example ---")
+    sample_note = "Call Jane at 555-123-4567 on 2024-03-15. MRN: ABC-123. Email jane@example.com."
+    print(redact_phi(sample_note))
+
+    print("\nHuman-in-the-loop: Data Engineer validates FHIR bundle structure; Clinical Informaticist validates extracted data elements; Privacy reviewers validate de-identification rules before real use.")
