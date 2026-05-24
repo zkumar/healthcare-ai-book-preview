@@ -16,9 +16,9 @@ The reality is that healthcare data is not a pipeline. It is a delta — a const
 
 This chapter does not tell a pessimistic story. It tells an honest one. The organizations that build healthcare AI on a realistic understanding of their data — its limitations, its biases, its governance constraints, and its genuine richness — are the ones that produce models that work in production. The ones that build on the vendor slide are the ones that discover the gap between pilot performance and deployment performance, and spend the next eighteen months trying to understand why their model worked in the demo environment and failed in the real one.
 
-> *"The absence of data in healthcare is not noise. It is signal. And AI systems that treat it as noise produce models that fail in exactly the populations that need them most."*
+> *"The absence of data in healthcare is not noise. It is signal. AI systems that treat it as noise produce models that fail in exactly the populations that need them most."*
 
-![The Healthcare Data Landscape](figures/e4d2b7e300397103bce431de6c2188330cf153b5.png)
+![The Healthcare Data Landscape](figures/the_healthcare_data_landscape_new.png)
 
 *Figure 3.1 — The Healthcare Data Landscape. Five major source categories, each with distinct standards, quality profiles, and AI readiness levels. No single source contains the complete patient picture.*
 
@@ -52,7 +52,7 @@ HL7 v2 messages — the older messaging standard that still dominates hospital A
 
 The data challenges facing healthcare AI are not simply engineering problems to be solved with better pipelines and larger compute budgets. They are epistemological problems — challenges in how AI systems come to know what they know, and whether what they know is actually true for the populations they will serve. Six structural challenges define this landscape, and understanding each of them is a prerequisite for building models that generalize beyond the training environment.
 
-![The Healthcare AI Data Challenge Map](figures/67f5352aacf07b55ab3945f5697f78e7e5047181.png)
+![The Healthcare AI Data Challenge Map](figures/the_healthcare_ai_data_challenge_map_new.png)
 
 *Figure 3.2 — The Healthcare AI Data Challenge Map. Six structural data challenges that determine whether a model generalizes to production populations or fails silently on the patients who need it most.*
 
@@ -76,7 +76,7 @@ The consequence for AI is direct and serious: the populations most in need of AI
 
 Federated learning has emerged as one of the most promising technical responses to the interrelated challenges of data scarcity, institutional privacy constraints, and population underrepresentation. The core idea is elegant: instead of centralizing patient data from multiple institutions into a single training dataset — a process that raises significant privacy, governance, and regulatory concerns — federated learning trains a global model by distributing the training process across participating institutions. Each institution trains a local model update on its own data. Only the model weights — not the underlying patient records — are shared with a central aggregation server. The server combines the local updates into a global model and distributes it back to participating institutions for the next training round.
 
-![Federated Learning Architecture in Healthcare](figures/bf4a18d48f07d6a0b0411d78353ecfa2b59e52dc.png)
+![Federated Learning Architecture in Healthcare](figures/federated_learning_architecture_new.png)
 
 *Figure 3.3 — Federated Learning Architecture in Healthcare. Model weights travel between institutions and the aggregation server. Raw patient data never leaves the originating institution — addressing both privacy and governance constraints simultaneously.*
 
@@ -96,7 +96,7 @@ Every conversation about healthcare AI data eventually arrives at governance —
 
 This is exactly backwards. Data governance in healthcare AI is not an interruption to the architecture. It is the architecture. The access controls determine which data the model can train on. The consent framework determines which patients are represented in the training data. The de-identification standard determines what analytical value the data retains after privacy protection is applied. The lineage tracking system determines whether the model can be audited, validated, and defended when a regulator or a clinical governance committee asks to understand how it was built. Organizations that design their AI systems without governance built in from the beginning do not save time. They borrow it — at high interest rates — from the compliance and validation work that inevitably comes due before any clinical deployment can occur.
 
-![The Healthcare AI Data Governance Stack](figures/6a2695369f5a0d6a4b5b900ddd6e89e974b26138.png)
+![The Healthcare AI Data Governance Stack](figures/the_healthcare_ai_data_governance_stack_new.png)
 
 *Figure 3.4 — The Healthcare AI Data Governance Stack. Six layers from raw data source to AI model governance — each layer a prerequisite for the layer above it. Governance is not overhead. It is the load-bearing structure.*
 

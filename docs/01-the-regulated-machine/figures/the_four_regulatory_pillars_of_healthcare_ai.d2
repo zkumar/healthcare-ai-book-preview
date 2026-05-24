@@ -1,0 +1,33 @@
+direction: right
+
+PatientSafety: "PATIENT SAFETY — THE FOUNDATION OF EVERY FRAMEWORK" {
+  shape: rectangle
+  style: { fill: "#283E6C", font-color: "#FFFFFF" }
+}
+
+IEC62304: "IEC 62304\nMedical Device Software Lifecycle\nSoftware classification by harm severity\nDevelopment & maintenance requirements" {
+  shape: rectangle
+  style: { fill: "#3465A4", font-color: "#FFFFFF" }
+}
+
+ISO14971: "ISO 14971\nRisk Management for Medical Devices\nRisk identification\nSeverity & probability\nResidual risk control\nLifecycle monitoring" {
+  shape: rectangle
+  style: { fill: "#20817D", font-color: "#FFFFFF" }
+}
+
+FDA21CFR: "FDA 21 CFR Part 11 / 820\nUS Electronic Records & Quality Systems\nAudit trails\nElectronic signatures\nQuality system regulation" {
+  shape: rectangle
+  style: { fill: "#E07B39", font-color: "#FFFFFF" }
+}
+
+EUMDR_AIAct: "EU MDR / AI Act\nEuropean Market Regulation\nClinical evidence\nHigh-risk AI oversight\nTransparency & explainability" {
+  shape: rectangle
+  style: { fill: "#8A39E0", font-color: "#FFFFFF" }
+}
+
+IEC62304 -> PatientSafety
+ISO14971 -> PatientSafety
+FDA21CFR -> PatientSafety
+EUMDR_AIAct -> PatientSafety
+
+EUMDR_AIAct -> EUMDR_AIAct: "Evolving\nto cover\nGenAI" { style: { stroke-dash: 3 } }

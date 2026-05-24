@@ -24,7 +24,7 @@ And yet the urgency has never been greater. Hospitals operate on margins so thin
 
 There is a temptation, especially among technologists entering healthcare for the first time, to view regulation as friction. As the thing that slows the good idea down, that buries the promising pilot in paperwork, that keeps the breakthrough locked in a proof-of-concept environment while patients who could benefit wait. This temptation is understandable. It is also dangerous. Because the moment a team begins treating regulatory compliance as an obstacle to route around rather than a standard to build toward, they have already made the most consequential architectural mistake of their project — and they will discover it at the worst possible time.
 
-![The Four Regulatory Pillars of Healthcare AI](figures/b5d0ab9f98249c6a286ce5c8cf592a1863a7820e.png)
+![The Four Regulatory Pillars of Healthcare AI](figures/the_four_regulatory_pillars_of_healthcare_ai_new.png)
 
 *Figure 1.1 — The Four Regulatory Pillars of Healthcare AI. Each framework was forged from real-world failure. Together they define the architectural constraints within which all healthcare AI must operate.*
 
@@ -34,11 +34,11 @@ There is a temptation, especially among technologists entering healthcare for th
 
 **FDA 21 CFR Part 11** governs electronic records and electronic signatures in regulated environments — the foundational requirement that every action taken by a software system in a clinical context be traceable, auditable, and tamper-evident. **Part 820** sets the broader framework for how medical devices must be designed, manufactured, and monitored across their entire lifecycle. Together, these provisions create an obligation that the training data, the model architecture, the validation methodology, the deployment environment, and the monitoring strategy — all of it — must be documented, controlled, and defensible to a federal auditor.
 
-![The Velocity Paradox](figures/df231c420f18c5121656e5fe5078d7ca2fab72b7.png)
+![The Velocity Paradox](figures/the_velocity_paradox_new.png)
 
 *Figure 1.2 — The Velocity Paradox. Clinical urgency and regulatory validation operate on irreconcilably different timescales. The practitioner's role is not to resolve this tension but to operate effectively within it.*
 
-The European regulatory landscape adds further dimension. The **EU Medical Device Regulation (MDR)** tightened clinical-evidence requirements significantly. The **EU AI Act** designates AI systems used in clinical decision-making as high-risk, imposing transparency, explainability, and human-oversight requirements that the most thoughtful healthcare AI practitioners have already recognized as non-negotiable. Innovation does not require the absence of regulation. It requires the maturity to build within it.
+The European regulatory landscape adds further dimension. The **EU Medical Device Regulation (MDR)** tightened clinical-evidence requirements significantly. The **EU AI Act (Regulation (EU) 2024/1689)**, which entered into force on **August 1, 2024**, designates AI systems used in medical devices as high-risk under **Annex I** (Union harmonisation legislation) and other clinical decision-making AI systems under **Annex III**. These regulations impose stringent transparency, explainability, and human-oversight requirements that thoughtful healthcare AI practitioners recognize as non-negotiable. Innovation does not require the absence of regulation; rather, it demands the maturity to build within its established frameworks.
 
 > **Expert Note — Governance as Architecture**
 >
@@ -50,7 +50,7 @@ The European regulatory landscape adds further dimension. The **EU Medical Devic
 
 There is a conversation that happens regularly in healthcare boardrooms, and it usually goes one of two ways. The first version is a clinical conversation — about quality metrics, patient outcomes, HEDIS scores, and the moral obligation of a health system to close the gaps between what its patients need and what they actually receive. The second is a financial conversation — about margin compression, avoidable costs, revenue leakage, and the existential arithmetic of running a healthcare institution in an era of shrinking reimbursements and rising operational complexity. What makes this moment in healthcare history genuinely significant is that artificial intelligence is making these two conversations inseparable.
 
-![The Care Gap Financial Cascade](figures/10f2aba53aee4600e25abdb4df5f6dcee4c12f32.png)
+![The Care Gap Financial Cascade](figures/the_care_gap_financial_cascade_new.png)
 
 *Figure 1.3 — The Care Gap Financial Cascade. Every unmanaged care gap generates an operational failure that translates directly into institutional financial exposure. GenAI intervenes at every stage of this chain.*
 
@@ -68,7 +68,7 @@ GenAI-powered clinical decision support changes the dynamic fundamentally. Inste
 
 There is a moment that every healthcare AI deployment eventually reaches. The model has been trained, validated, and stress-tested. The accuracy metrics are strong. The regulatory documentation is in order. The executive sponsor has signed off. And then the system meets the people it was built to serve — the radiologist who glances at the AI recommendation and overrides it without reading the confidence score, the care manager who receives the risk-stratification output and routes it to a generic queue where it will age unactioned, the patient who declines the AI-assisted service because no one explained what the system was doing with their data. Trust in healthcare AI is not a single thing. It must be earned separately, through different means, from every constituency the system touches.
 
-![The Trust Ecosystem](figures/355fd3be14fe5f0548fd9332fd611e9a5ed38beb.png)
+![The Trust Ecosystem](figures/the_trust_ecosystem_new.png)
 
 *Figure 1.4 — The Trust Ecosystem. Each constituency requires a distinct trust-building strategy. The AI system at the center is only as effective as the trust network surrounding it.*
 
