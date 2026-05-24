@@ -1,8 +1,8 @@
-# Chapter 1 — The Regulated Machine
+# Chapter 2 — The Regulated Machine
 
 *Why healthcare is the hardest domain for AI — and why that makes it the most important*
 
-> **What This Chapter Covers:** The regulatory architecture that governs healthcare AI · Why care gaps and population-health failures are financial crises · How trust — earned differently from clinicians, payers, administrators, and patients — determines whether any deployment succeeds.
+> **What This Chapter Covers:** The regulatory architecture that governs healthcare AI across MedTech, pharma, payer, and provider environments · Why care gaps and population-health failures are financial crises · How trust — earned differently from clinicians, payers, administrators, and patients — determines whether any deployment succeeds.
 >
 > **Why It Matters:** Understanding these three realities is the prerequisite for every technical, operational, and strategic decision that follows. Skip this foundation, and every subsequent chapter is built on sand.
 
@@ -26,7 +26,7 @@ There is a temptation, especially among technologists entering healthcare for th
 
 ![The Four Regulatory Pillars of Healthcare AI](figures/the_four_regulatory_pillars_of_healthcare_ai_new.png)
 
-*Figure 1.1 — The Four Regulatory Pillars of Healthcare AI. Each framework was forged from real-world failure. Together they define the architectural constraints within which all healthcare AI must operate.*
+*Figure 2.1 — The Four Regulatory Pillars of Healthcare AI. Each framework was forged from real-world failure. Together they define the architectural constraints within which healthcare AI must operate, especially when AI becomes part of a regulated medical product or clinical decision workflow.*
 
 **IEC 62304** — the international standard for medical device software lifecycle processes — exists because software in clinical environments had failed in ways that were invisible until they were catastrophic. It mandates that software be classified by the severity of harm its failure could cause, and that the rigor of development, testing, and maintenance be proportional to that classification. A Class C software item — one whose failure could result in death or serious injury — demands a level of documentation, traceability, and verification that most enterprise software teams have never encountered. This is not bureaucracy for its own sake. It is an acknowledgment that in a medical device, a software defect is not a bug ticket. It is a patient-safety event.
 
@@ -36,9 +36,22 @@ There is a temptation, especially among technologists entering healthcare for th
 
 ![The Velocity Paradox](figures/the_velocity_paradox_new.png)
 
-*Figure 1.2 — The Velocity Paradox. Clinical urgency and regulatory validation operate on irreconcilably different timescales. The practitioner's role is not to resolve this tension but to operate effectively within it.*
+*Figure 2.2 — The Velocity Paradox. Clinical urgency and regulatory validation operate on irreconcilably different timescales. The practitioner's role is not to resolve this tension but to operate effectively within it.*
 
 The European regulatory landscape adds further dimension. The **EU Medical Device Regulation (MDR)** tightened clinical-evidence requirements significantly. The **EU AI Act (Regulation (EU) 2024/1689)**, which entered into force on **August 1, 2024**, designates AI systems used in medical devices as high-risk under **Annex I** (Union harmonisation legislation) and other clinical decision-making AI systems under **Annex III**. These regulations impose stringent transparency, explainability, and human-oversight requirements that thoughtful healthcare AI practitioners recognize as non-negotiable. Innovation does not require the absence of regulation; rather, it demands the maturity to build within its established frameworks.
+
+The important correction is that **regulatory architecture is not only a MedTech problem**. MedTech has the most explicit product-safety framework, but every healthcare AI deployment sits inside a compliance perimeter. Pharma operates under evidence integrity, pharmacovigilance, clinical-trial, promotional-review, and electronic-record controls. Payers operate under benefit-design, medical-necessity, utilization-management, risk-adjustment, quality-measure, privacy, nondiscrimination, and auditability obligations. Providers operate under clinical standard of care, HIPAA privacy and security, EHR governance, billing compliance, credentialing, patient safety, and malpractice exposure. The compliance question changes by sector, but it never disappears.
+
+### Sector Compliance Surfaces — The Same AI Can Trigger Different Obligations
+
+| Sector | Compliance surface | AI-specific failure mode | What governance must prove |
+|---|---|---|---|
+| **MedTech** | Medical-device software lifecycle, risk management, quality system controls, clinical validation, post-market surveillance | A model embedded in or associated with a device changes diagnosis, monitoring, therapy guidance, or product performance without adequate validation or change control | The system is safe and effective for its intended use, changes are controlled, hazards are mitigated, and real-world performance is monitored |
+| **Pharma** | GxP records, clinical-trial integrity, pharmacovigilance, regulatory submissions, medical affairs, promotional review | A generative or predictive system influences target selection, trial design, safety-signal detection, regulatory writing, or promotional content without traceable human accountability | The organization can reconstruct the model, input data, output, human review, decision rationale, and final regulated record |
+| **Payer** | HIPAA, CMS program rules, utilization management, prior authorization, risk adjustment, HEDIS / Stars, parity, nondiscrimination, appeal rights | An algorithmic decision affects access, authorization, payment, outreach priority, risk coding, or quality performance in a way that cannot be explained or audited | The plan can show medical-necessity logic, member-level explainability, bias monitoring, appeal support, and separation between prediction and inappropriate denial |
+| **Provider** | HIPAA, EHR governance, clinical decision support rules, malpractice risk, billing compliance, patient safety, credentialing, quality reporting | A model inserts recommendations into clinical workflow that clinicians overtrust, ignore, cannot interpret, or cannot document as part of the standard of care | The health system can show clinical validation, workflow fit, human oversight, documentation, escalation rules, and monitoring for drift or harm |
+
+This sector map matters because a single technical capability can become four different compliance problems. A summarization model in pharma may be a regulatory-writing control problem. The same summarization model in a hospital may be a clinical-documentation and billing-compliance problem. In a payer, it may become an appeal-file, utilization-review, or member-communication problem. In MedTech, it may become part of the evidence package for a regulated product. The model is not regulated in the abstract. The model is governed by what it does, who relies on it, what decision it influences, and what harm could follow if it is wrong.
 
 > **Expert Note — Governance as Architecture**
 >
@@ -52,7 +65,7 @@ There is a conversation that happens regularly in healthcare boardrooms, and it 
 
 ![The Care Gap Financial Cascade](figures/the_care_gap_financial_cascade_new.png)
 
-*Figure 1.3 — The Care Gap Financial Cascade. Every unmanaged care gap generates an operational failure that translates directly into institutional financial exposure. GenAI intervenes at every stage of this chain.*
+*Figure 2.3 — The Care Gap Financial Cascade. Every unmanaged care gap generates an operational failure that translates directly into institutional financial exposure. GenAI intervenes at every stage of this chain.*
 
 A hospital operating on a two-to-three-percent net margin has almost no tolerance for inefficiency at the population level. Every patient with uncontrolled diabetes who arrives in the emergency department instead of being managed proactively represents a cost event that the system absorbs at a fraction of its true expense. Every preventable readmission within thirty days of discharge triggers a Medicare penalty and erases the margin contribution of the original admission. The insurance dimension is equally stark. A risk-stratification model that systematically underestimates the complexity of a particular member segment produces an underfunded care-management program, an inadequately priced premium, and a claims experience that erodes the actuarial foundation the entire plan is built on.
 
@@ -70,7 +83,7 @@ There is a moment that every healthcare AI deployment eventually reaches. The mo
 
 ![The Trust Ecosystem](figures/the_trust_ecosystem_new.png)
 
-*Figure 1.4 — The Trust Ecosystem. Each constituency requires a distinct trust-building strategy. The AI system at the center is only as effective as the trust network surrounding it.*
+*Figure 2.4 — The Trust Ecosystem. Each constituency requires a distinct trust-building strategy. The AI system at the center is only as effective as the trust network surrounding it.*
 
 ### The Trust Ecosystem — Constituency Requirements
 
@@ -101,4 +114,4 @@ Technical readers: a companion **[Practitioner Depth](practitioner.md)** page ac
 
 ---
 
-*Chapter 1 · Preview edition. The complete book is in progress — [share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*
+*Chapter 2 · Preview edition. The complete book is in progress — [share feedback](https://github.com/zkumar/healthcare-ai-book-preview/issues).*

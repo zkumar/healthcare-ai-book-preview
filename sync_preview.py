@@ -157,6 +157,32 @@ for slug in slugs:
 
     nav_entries.append((title, f"{slug}/index.md", prac_rel))
 
+# --- Persistent assets and pages (always present, regardless of chapter selection) ---
+assets_dest = docs / "assets"
+assets_dest.mkdir(exist_ok=True)
+
+# Book cover -> landing hero
+cover_src = private / "assets" / "cover" / "final_front_cover_practitioner_guide.png"
+if cover_src.exists():
+    shutil.copy(cover_src, assets_dest / "cover.png")
+    print("  cover image synced")
+else:
+    print("  WARNING: cover image not found")
+
+# Author photo (optional until provided in the private repo at assets/author.png)
+photo_src = private / "assets" / "author.png"
+if photo_src.exists():
+    shutil.copy(photo_src, assets_dest / "author.png")
+    print("  author photo synced")
+else:
+    print("  author photo NOT found at assets/author.png — About page shows a placeholder")
+
+# Dedication — source of truth is DEDICATION.md in the private repo
+ded_src = private / "DEDICATION.md"
+if ded_src.exists():
+    shutil.copy(ded_src, docs / "dedication.md")
+    print("  dedication synced")
+
 # Regenerate the nav block in mkdocs.yml.
 mkdocs_yml = public / "mkdocs.yml"
 text = mkdocs_yml.read_text()
@@ -169,6 +195,10 @@ for title, read_path, prac_path in nav_entries:
         nav_lines.append(f"    - Practitioner Depth: {prac_path}")
     else:
         nav_lines.append(f"  - {safe_title}: {read_path}")
+# Persistent pages — always visible
+nav_lines.append("  - About the Author: about.md")
+if (docs / "dedication.md").exists():
+    nav_lines.append("  - Dedication: dedication.md")
 nav_block = "\n".join(nav_lines)
 
 text = re.sub(r"# NAV-START.*?# NAV-END", f"# NAV-START\n{nav_block}\n# NAV-END", text, flags=re.DOTALL)

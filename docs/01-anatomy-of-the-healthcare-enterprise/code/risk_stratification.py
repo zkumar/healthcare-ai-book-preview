@@ -1,111 +1,9 @@
-# Practitioner Depth — Chapter 2 — Anatomy of a Healthcare Enterprise
+"""Simplified payer risk-stratification example for Chapter 1.
 
-*Technical grounding that operationalizes the chapter's five-sector concepts. Written for data engineers, healthcare analysts, and AI practitioners building payer and provider systems.*
-
-## Data Snapshots
-
-## Domain Data Snapshots — Chapter 2
-
-### 837P Professional Claim — Key Loop and Segment Structure
-
-The ASC X12 837P (Professional) transaction is the standard electronic format for submitting professional medical claims. Understanding its structure is essential for payer AI systems that process, audit, or analyze claims data at scale.
-
-| Loop / Segment | Purpose | Notes |
-|---|---|---|
-| **ISA** | Interchange Control Header | Sender/receiver IDs, date, version |
-| **GS** | Functional Group Header | Functional identifier, control number |
-| **ST** | Transaction Set Header | `837` = Health Care Claim |
-| **LOOP 2000A — Billing Provider** | | |
-| `NM1*85` | Billing Provider Name | Entity type, NPI, tax ID |
-| `N3` | Address | Street |
-| `N4` | City / State / Zip | |
-| **LOOP 2000B — Subscriber (Insured)** | | |
-| `NM1*IL` | Subscriber Name | Member ID, last name, first name |
-| `DMG` | Subscriber Demographics | DOB, gender |
-| `INS` | Subscriber Information | Relationship to insured |
-| **LOOP 2000C — Patient** (if different from subscriber) | | |
-| `NM1*QC` | Patient Name | |
-| `DMG` | Patient Demographics | |
-| **LOOP 2300 — Claim Information** | | |
-| `CLM` | Claim Details | Claim ID, total charge, place of service, signature on file, assignment of benefits |
-| `DTP*434` | Service Date Range | |
-| `REF*D9` | Claim Identifier | |
-| `HI` | Diagnosis Codes | ICD-10-CM: principal + secondary |
-| `HI*BK` | Principal Diagnosis | e.g., `HI*BK:E11.9` = Type 2 Diabetes unspecified |
-| **LOOP 2400 — Service Line** | | |
-| `LX` | Service Line Number | |
-| `SV1` | Professional Service | CPT/HCPCS code, charge, units, place of service |
-| `DTP*472` | Date of Service | |
-| `REF*6R` | Line Item Control Number | |
-| **SE** | Transaction Set Trailer | |
-| **GE** | Functional Group Trailer | |
-| **IEA** | Interchange Control Trailer | |
-
-#### Key AI-relevant fields
-
-| Field | Meaning | Why it matters |
-|---|---|---|
-| `CLM01` | Claim ID | Join key across 837 (submission) and 835 (remittance/payment) |
-| `HI*BK` | Principal diagnosis (ICD-10-CM) | Primary feature for clinical AI modeling |
-| `SV101` | Procedure code (CPT/HCPCS) | Primary feature for clinical AI modeling |
-| `SV102` | Charge amount | Cost / utilization signal |
-| `SV104` | Units of service | Utilization signal |
-| `NM109` | NPI | Links claims to provider registries |
-
-> **Expert Note — Modeling Anchors**
->
-> For payer AI systems, the `HI` segment (diagnosis codes) and `SV1` segment (procedure codes) are the primary features for clinical modeling. The `NM1*85` NPI links claims to provider registries. The `CLM01` claim ID is the join key between 837 (claim submission) and 835 (remittance / payment) transactions.
-
----
-
-### Consumer Health Data Integration Pipeline — Architecture Sketch
-
-A consumer health data integration pipeline must address three architectural challenges simultaneously: **format normalization** (Apple Health, Fitbit, Garmin all use different schemas), **clinical validation** (consumer sensor data requires quality scoring before clinical use), and **consent enforcement** (data use must be traceable to patient authorization).
-
-| Stage | Responsibility | Key operations |
-|---|---|---|
-| **1 — Ingestion** | Receive HealthKit / Google Fit exports or FHIR-compliant API feeds | Validate format and completeness on arrival; tag each record with source device, firmware version, ingestion timestamp |
-| **2 — Normalization** | Map device-specific observation types to LOINC codes | Convert units to UCUM standard; apply device-specific calibration offsets where available from manufacturer documentation |
-| **3 — Quality Scoring** | Apply signal-quality filters | Detect physiologically implausible values, artifact, data gaps; score each observation `High` / `Moderate` / `Low` / `Reject` |
-| **4 — Consent Enforcement** | Validate against current consent agreement | Apply data-use restriction flags; log all downstream access to the consent audit trail |
-| **5 — FHIR Output** | Serialize for downstream consumers | Emit quality-scored, consent-validated observations as FHIR R4 `Observation` resources for the enterprise FHIR server, payer risk models, and provider clinical systems |
-
-A reference Python sketch of the payer-side risk-stratification stage that consumes this pipeline lives in [`code/risk_stratification.py`](code/risk_stratification.py).
-
-## Code
-
-_Tested and Colab-compatible. Click **Open in Colab** to run any sample in your browser — no setup._
-
-### `risk_stratification.py`
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zkumar/healthcare-ai-book-preview/blob/main/docs/02-anatomy-of-the-healthcare-enterprise/code/risk_stratification.ipynb)
-
-[Download .py](code/risk_stratification.py) · [Download notebook](code/risk_stratification.ipynb)
-
-```python
-"""Payer Risk Stratification Pipeline — illustrative implementation.
-
-# For Google Colab compatibility:
-# !pip install pandas
-
-# In a production system, the full CMS HCC V28 model coefficients
-# would be loaded from a comprehensive dataset, and HEDIS care-gap rules
-# would be dynamically updated from official specifications. For this
-# didactic example, we use simplified, illustrative subsets and rules
-# to demonstrate the core logic of risk stratification and care gap identification.
-
-
-
-Status: UNTESTED. This is the simplified HCC-aware risk-stratification sketch
-from Chapter 2. Before this is referenced from chapter.md as a worked example
-it needs:
-  - the full CMS HCC V28 model coefficients (this file uses a 7-condition
-    illustrative subset; the production model has ~115 condition categories
-    with gender-age interaction terms, disease interaction adjustments, and
-    separate coefficients for new enrollees and institutional patients)
-  - unit tests covering RAF score boundaries and tier-assignment edges
-  - a worked example with a population larger than four members
-  - HEDIS care-gap rules verified against current measure year
+The script teaches how diagnosis codes, utilization, and care-gap rules can be
+converted into RAF-style scores, operational risk tiers, and reviewable member
+priorities. It is intentionally small so readers can study the logic of the
+workflow before applying full production code sets or measure-year rules.
 """
 from dataclasses import dataclass, field
 from typing import Optional
@@ -289,4 +187,3 @@ if __name__ == "__main__":
     print(f"Tier-1 Critical Members: {len(results[results.risk_tier == 'TIER-1-CRITICAL'])}")
     print(f"Members with Care Gaps: {len(results[results.care_gaps > 0])}")
     print("\nHuman-in-the-loop: Medical Director reviews stratification criteria; Care Managers review individual member profiles.")
-```
