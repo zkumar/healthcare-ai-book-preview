@@ -1,7 +1,7 @@
 # About the Author
 
 <p align="center">
-  <img src="assets/author.png" alt="Vijay Kumar Zharotia" width="300" style="border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.2);">
+  <img src="../assets/author.png" alt="Vijay Kumar Zharotia" width="300" style="border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.2);">
 </p>
 
 <h2 align="center" style="margin-bottom:0;">Vijay Kumar Zharotia</h2>
