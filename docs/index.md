@@ -24,7 +24,18 @@ This is a **preview edition** of a book in progress on how generative and agenti
 
 It is written for technology practitioners, healthcare builders, **students, and domain newcomers** who want a clear path into the sector — not only what the tools can do, but how healthcare context, regulation, data, workflow, governance, and trust shape whether those tools can be used responsibly.
 
-> This is not a declaration that one person has the answer. It is an invitation to understand the system, learn its constraints, explore actively, and contribute responsibly to what healthcare AI becomes. — *[from the dedication](dedication.md)*
+## How to use this book
+
+This is **not** a textbook that serves every answer on a plate. Healthcare AI is shaped by ambiguity, regulation, data quality, workflow constraints, clinical risk, business incentives, and human trust — it cannot be learned well through passive reading alone. The purpose is to **provoke thought as much as explain concepts**: the practitioner sections, simplified examples, and frameworks are starting points, not finished industrial implementations.
+
+| Reader stance | What this book asks you to do |
+|---|---|
+| Don't only consume | Pause, question assumptions, and test whether an idea holds in a real healthcare context. |
+| Don't memorize blindly | Understand why a method works, where it fails, and what constraints healthcare adds. |
+| Don't treat examples as production systems | Use simplified code and rules as learning scaffolds, then investigate how industrial systems differ. |
+| Don't wait for perfect understanding | Build small mental models, experiment responsibly, and refine them as your knowledge grows. |
+
+*More in the [dedication and author note](dedication.md).*
 
 ## What's in the preview
 
@@ -45,6 +56,24 @@ It is written for technology practitioners, healthcare builders, **students, and
 </div>
 
 Each chapter has a companion **Practitioner Depth** page with regulatory data snapshots and runnable, Colab-ready code.
+
+## About the author
+
+<img src="assets/author.png" alt="Vijay Kumar Zharotia" width="150" align="left" style="border-radius:10px;margin:0 1.2rem 0.6rem 0;box-shadow:0 4px 14px rgba(0,0,0,0.2);">
+
+**Vijay Kumar Zharotia** — *Domain, Technology & AI Expert in a Box.* Thirty-plus years across regulated medical-device engineering, large-scale healthcare delivery, and modern agentic AI. He leads Wipro's Healthcare & Life Sciences practice across MedTech, Payer, Provider, and Pharma. This book grew out of that practice — an attempt to crystallize what he has learned and pass it forward.
+
+[Read the full bio →](about.md)
+
+<div style="clear:both;"></div>
+
+## Dedication
+
+> To **Ritika Zharotia**, my wife, whose patience, encouragement, and quiet strength have supported my learning, experimentation, and work across every difficult season.
+
+> This is not a declaration that one person has the answer. It is an invitation to understand the system, learn its constraints, explore actively, and contribute responsibly to what healthcare AI becomes.
+
+[Read the dedication and author note →](dedication.md)
 
 ## A living document
 
