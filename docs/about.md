@@ -9,7 +9,7 @@
 
 ---
 
-Three things rarely live in one person: deep **healthcare domain** knowledge, hands-on **technology** and engineering capability, and applied **AI** expertise. Vijay brings all three — more than 30 years spanning regulated medical-device engineering, large-scale healthcare delivery, and modern agentic AI.
+Three things rarely live in one person: deep **healthcare domain** knowledge, hands-on **technology** and engineering capability, and applied **AI** expertise. Vijay brings all three — more than 30 years spanning regulated medical-device engineering, large-scale healthcare platforms, Connectivity Solutions and modern Agentic AI platforms.
 
 His work spans MedTech, Payer, Provider, and Pharma — leading healthcare and life sciences practices, advising senior executives at marquee accounts, and turning emerging technology into measurable clinical, operational, and commercial outcomes.
 
@@ -21,7 +21,7 @@ His work spans MedTech, Payer, Provider, and Pharma — leading healthcare and l
 
 ## Organizations
 
-Across three decades, Vijay has built and led — from semiconductor and enterprise systems, to medical imaging in Tokyo, to today's regulated healthcare AI — at:
+Across three decades, Vijay has built and led — from semiconductor manufacturing, medical imaging, IVD, Device Connectivity, Interoperability, Patient Monitoring, Remote Patient Platform, Chronic Care Management, Large scale platforms, Remote Verification Platform, to today's regulated healthcare AI — at:
 
 <p align="center" style="font-size:1.05rem;line-height:2;">
 <strong>Wipro</strong> · <strong>Aikaki</strong> · <strong>iGATE / Patni Computers</strong> · <strong>Tata IBM</strong> · <strong>EnnovationSoft</strong> · <strong>Infozech</strong>
