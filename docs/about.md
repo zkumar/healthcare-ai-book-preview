@@ -24,7 +24,7 @@ His work spans MedTech, Payer, Provider, and Pharma — leading healthcare and l
 Across three decades, Vijay has built and led — from semiconductor manufacturing, medical imaging, IVD, Device Connectivity, Interoperability, Patient Monitoring, Remote Patient Platform, Chronic Care Management, Large scale platforms, Remote Verification Platform, to today's regulated healthcare AI — at:
 
 <p align="center" style="font-size:1.05rem;line-height:2;">
-<strong>Wipro</strong> · <strong>Aikaki</strong> · <strong>iGATE / Patni Computers</strong> · <strong>Tata IBM</strong> · <strong>EnnovationSoft</strong> · <strong>Infozech</strong>
+<strong>Wipro</strong> · <strong>Aikaki</strong> · <strong>iGATE</strong> · <strong>Tata IBM</strong> · <strong>EnnovationSoft</strong> · <strong>Infozech</strong>
 </p>
 
 ## Recognition
