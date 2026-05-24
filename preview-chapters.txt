@@ -1,0 +1,8 @@
+# Chapters to publish in the public preview.
+# One chapter slug per line (must match a directory under the private repo's chapters/).
+# Edit this list, then run ./sync-preview.sh to rebuild the public site.
+# Lines starting with # are ignored.
+
+01-the-regulated-machine
+02-anatomy-of-the-healthcare-enterprise
+03-the-data-reality

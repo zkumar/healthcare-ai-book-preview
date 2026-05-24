@@ -1,0 +1,10 @@
+# MkDocs build output (deployed to gh-pages branch, not tracked on main)
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS
+.DS_Store
