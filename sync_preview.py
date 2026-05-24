@@ -161,11 +161,14 @@ for slug in slugs:
 assets_dest = docs / "assets"
 assets_dest.mkdir(exist_ok=True)
 
-# Book cover -> landing hero
+# Book cover -> landing hero (web-optimized: cap longest edge at 1000px)
 cover_src = private / "assets" / "cover" / "final_front_cover_practitioner_guide.png"
 if cover_src.exists():
-    shutil.copy(cover_src, assets_dest / "cover.png")
-    print("  cover image synced")
+    cover_dest = assets_dest / "cover.png"
+    shutil.copy(cover_src, cover_dest)
+    if shutil.which("sips"):
+        subprocess.run(["sips", "-Z", "1000", str(cover_dest)], capture_output=True)
+    print("  cover image synced (optimized)")
 else:
     print("  WARNING: cover image not found")
 
