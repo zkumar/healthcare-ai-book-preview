@@ -169,13 +169,22 @@ if cover_src.exists():
 else:
     print("  WARNING: cover image not found")
 
-# Author photo (optional until provided in the private repo at assets/author.png)
-photo_src = private / "assets" / "author.png"
-if photo_src.exists():
-    shutil.copy(photo_src, assets_dest / "author.png")
-    print("  author photo synced")
+# Author photo — search assets/author.* and assets/author/*; normalize to docs/assets/author.png.
+photo_candidates = [private / "assets" / f"author.{e}" for e in ("png", "jpg", "jpeg", "webp")]
+author_dir = private / "assets" / "author"
+if author_dir.is_dir():
+    for e in ("png", "jpg", "jpeg", "webp"):
+        photo_candidates.extend(sorted(author_dir.glob(f"*.{e}")))
+photo_src = next((p for p in photo_candidates if p.exists()), None)
+if photo_src:
+    dest_photo = assets_dest / "author.png"
+    shutil.copy(photo_src, dest_photo)
+    # Web-optimize (macOS sips): cap longest edge at 900px, keeps retina sharpness.
+    if shutil.which("sips"):
+        subprocess.run(["sips", "-Z", "900", str(dest_photo)], capture_output=True)
+    print(f"  author photo synced (from {photo_src.relative_to(private)})")
 else:
-    print("  author photo NOT found at assets/author.png — About page shows a placeholder")
+    print("  author photo NOT found — About page shows a placeholder")
 
 # Dedication — source of truth is DEDICATION.md in the private repo
 ded_src = private / "DEDICATION.md"
