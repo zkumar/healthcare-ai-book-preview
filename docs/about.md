@@ -11,7 +11,7 @@
 
 Three things rarely live in one person: deep **healthcare domain** knowledge, hands-on **technology** and engineering capability, and applied **AI** expertise. Vijay brings all three — more than 30 years spanning regulated medical-device engineering, large-scale healthcare delivery, and modern agentic AI.
 
-He currently leads Wipro's Healthcare & Life Sciences practice across MedTech, Payer, Provider, and Pharma, turning emerging technology into measurable clinical, operational, and commercial outcomes.
+His work spans MedTech, Payer, Provider, and Pharma — leading healthcare and life sciences practices, advising senior executives at marquee accounts, and turning emerging technology into measurable clinical, operational, and commercial outcomes.
 
 ## Expert in a box
 

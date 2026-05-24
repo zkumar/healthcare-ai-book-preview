@@ -61,7 +61,7 @@ Each chapter has a companion **Practitioner Depth** page with regulatory data sn
 
 <img src="assets/author.png" alt="Vijay Kumar Zharotia" width="150" align="left" style="border-radius:10px;margin:0 1.2rem 0.6rem 0;box-shadow:0 4px 14px rgba(0,0,0,0.2);">
 
-**Vijay Kumar Zharotia** — *Domain, Technology & AI Expert in a Box.* Thirty-plus years across regulated medical-device engineering, large-scale healthcare delivery, and modern agentic AI. He leads Wipro's Healthcare & Life Sciences practice across MedTech, Payer, Provider, and Pharma. This book grew out of that practice — an attempt to crystallize what he has learned and pass it forward.
+**Vijay Kumar Zharotia** — *Domain, Technology & AI Expert in a Box.* Thirty-plus years across regulated medical-device engineering, large-scale healthcare delivery, and modern agentic AI. His work spans MedTech, Payer, Provider, and Pharma — leading practices and advising executives across the sector. This book grew out of that work — an attempt to crystallize what he has learned and pass it forward.
 
 [Read the full bio →](about.md)
 
