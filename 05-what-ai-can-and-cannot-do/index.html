@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How Generative AI is Rebuilding Healthcare from the Inside Out — a foundational guide. Preview edition.">
+      
+      
+      
+        <link rel="canonical" href="https://zkumar.github.io/healthcare-ai-book-preview/05-what-ai-can-and-cannot-do/">
+      
+      
+        <link rel="prev" href="../04-the-semantic-layer/practitioner/">
+      
+      
+        <link rel="next" href="practitioner/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Read - Agentic AI in Healthcare</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-what-ai-can-and-cannot-do" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic AI in Healthcare" class="md-header__button md-logo" aria-label="Agentic AI in Healthcare" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI in Healthcare
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Read
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic AI in Healthcare" class="md-nav__button md-logo" aria-label="Agentic AI in Healthcare" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Agentic AI in Healthcare
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/zkumar/healthcare-ai-book-preview" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zkumar/healthcare-ai-book-preview
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1 — Anatomy of a Healthcare Enterprise
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 1 — Anatomy of a Healthcare Enterprise
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-anatomy-of-the-healthcare-enterprise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-anatomy-of-the-healthcare-enterprise/practitioner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Depth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2 — The Regulated Machine
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 2 — The Regulated Machine
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-regulated-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-the-regulated-machine/practitioner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Depth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3 — The Data Reality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 3 — The Data Reality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-the-data-reality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-the-data-reality/practitioner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Depth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4 — The Semantic Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 4 — The Semantic Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-the-semantic-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-the-semantic-layer/practitioner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Depth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem First Worksheet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Problem First Worksheet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-the-most-expensive-misunderstanding-in-healthcare-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening: The Most Expensive Misunderstanding in Healthcare Technology
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-1-drawing-the-line-automation-classical-ai-and-genai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 1 — Drawing the Line: Automation, Classical AI, and GenAI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 1 — Drawing the Line: Automation, Classical AI, and GenAI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-machine-learning-the-middle-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical Machine Learning: The Middle Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genai-the-versatility-that-changes-the-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GenAI: The Versatility That Changes the Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prior-auth-appeals-one-problem-three-handlings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prior-Auth Appeals: One Problem, Three Handlings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-2-the-versatility-gap-how-wrong-focus-produces-wrong-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 2 — The Versatility Gap: How Wrong Focus Produces Wrong Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 2 — The Versatility Gap: How Wrong Focus Produces Wrong Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-first-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem-First Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-3-the-honest-limits-what-ai-cannot-do-fix-or-be-accountable-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic 3 — The Honest Limits: What AI Cannot Do, Fix, or Be Accountable For
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Topic 3 — The Honest Limits: What AI Cannot Do, Fix, or Be Accountable For">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hallucination-the-confident-wrong-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hallucination: The Confident Wrong Answer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountability-the-line-that-cannot-be-crossed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accountability: The Line That Cannot Be Crossed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clinical-judgment-the-irreducible-human-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical Judgment: The Irreducible Human Element
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-foundations-the-limit-that-surprises-the-most" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Broken Foundations: The Limit That Surprises the Most
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-close-the-mental-model-that-travels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Close: The Mental Model That Travels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-practitioners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Practitioners
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-guidance-fda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory guidance — FDA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regulatory-framework-european-union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regulatory framework — European Union
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#international-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        International guidance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-reviewed-literature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer-reviewed literature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-analysis-and-investigative-journalism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry analysis and investigative journalism
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practitioner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practitioner Depth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About the Author
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dedication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dedication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-5-what-ai-can-and-cannot-do">Chapter 5 — What AI Can and Cannot Do<a class="headerlink" href="#chapter-5-what-ai-can-and-cannot-do" title="Permanent link">&para;</a></h1>
+<p><em>The mental model reset that every healthcare executive, clinician, and engineer needs before deploying anything</em></p>
+<blockquote>
+<p><strong>What This Chapter Covers:</strong> The critical distinction between automation, classical AI, and GenAI · Why wrong focus produces wrong results and how the versatility gap explains most healthcare AI disappointments · The problem-first framework for locating genuine AI opportunity · The honest limits that every responsible healthcare AI deployment must respect.</p>
+<p><strong>Why It Matters:</strong> This is the chapter that changes how you read every chapter that follows. Before examining what AI does in MedTech, payer operations, clinical settings, and drug discovery, you need a clear mental model of what AI actually is — what it can do that nothing else can, where its versatility is being systematically underestimated, and where its limits are being systematically ignored. Without this mental model, the domain chapters are interesting. With it, they become actionable.</p>
+</blockquote>
+<hr />
+<h2 id="opening-the-most-expensive-misunderstanding-in-healthcare-technology">Opening: The Most Expensive Misunderstanding in Healthcare Technology<a class="headerlink" href="#opening-the-most-expensive-misunderstanding-in-healthcare-technology" title="Permanent link">&para;</a></h2>
+<p>There is a conversation that plays out, with remarkable consistency, across healthcare organizations of every size and type. An executive team decides to invest in AI. A vendor is selected, a pilot is launched, expectations are set. Twelve months later the pilot has produced results that are technically defensible and operationally disappointing. The model works. The problem it was applied to was not the right one. The capability that was deployed was a fraction of what was available. And the organization concludes, incorrectly, that AI has underdelivered — when what actually happened is that the wrong problem was given to the right tool, or the right problem was given to the wrong category of tool entirely, or a genuinely powerful platform capability was deployed as a point solution against a narrow use case while fifteen adjacent opportunities went unaddressed.</p>
+<p>This pattern has a name. It is wrong focus producing wrong results. And it is the most expensive misunderstanding in healthcare technology today — not because AI is overhyped, but because the mental model that most healthcare professionals carry into their first AI engagement is too narrow, too imprecise, and too easily confused between three fundamentally different categories of capability: rule-based automation, classical machine learning, and generative AI. These are not the same thing. They do not do the same things. They do not fail in the same ways. An organization that deploys automation while calling it AI, or deploys a classical ML model where a generative system would have been transformative, or deploys a point solution where a platform would have compounded value across a dozen workflows simultaneously, is not making an implementation error. It is making a strategic error — one that compounds with every subsequent decision built on the same misunderstanding.</p>
+<p>This chapter draws the lines clearly. It does not require technical depth to follow — it requires intellectual honesty about what has been purchased, what has been deployed, and what has actually been asked of the tools that healthcare organizations are calling AI. The regulators have already made many of the relevant distinctions: the FDA's AI/ML Software as a Medical Device Action Plan (FDA 2021a) and its subsequent guidance trail; the World Health Organization's ethics and governance framework (WHO 2021); and the EU AI Act's high-risk classification of clinical decision-making AI (Regulation (EU) 2024/1689) — each describes a category-aware view of AI that this chapter argues healthcare organizations must internalize before any procurement decision. By the end of it, the reader will have a mental model that changes how they evaluate every AI investment, every vendor claim, and every deployment decision in the domain chapters that follow.</p>
+<blockquote>
+<p><em>"Wrong focus produces wrong results — not because the AI failed, but because the problem it was given was not the one where it would have created the most value."</em></p>
+</blockquote>
+<hr />
+<h2 id="topic-1-drawing-the-line-automation-classical-ai-and-genai">Topic 1 — Drawing the Line: Automation, Classical AI, and GenAI<a class="headerlink" href="#topic-1-drawing-the-line-automation-classical-ai-and-genai" title="Permanent link">&para;</a></h2>
+<p>Walk into almost any healthcare organization today and ask where they are using AI. The answers will include rule-based prior authorization logic — if the diagnosis code matches this list and the procedure code matches that list and the member has not had this procedure in the past twelve months, approve. Deterministic claims editing systems — if the modifier is incompatible with this procedure code, reject. Scheduled population health reports — pull all members with HbA1c over nine who have not had a retinal exam in the past year and generate an outreach list. Alert-driven clinical decision support — if the creatinine exceeds this threshold for a patient on this medication, fire an alert. None of these are AI. They are automation — valuable, important, well-understood automation that healthcare could not function without. But they are systems that execute predefined logic on structured inputs and produce predefined outputs when conditions are met. They do not learn. They do not generalize. They do not improve with exposure to new cases. They do exactly what they were programmed to do, and nothing more.</p>
+<p><img alt="Automation, Classical AI, and GenAI: The Distinction Matrix" src="figures/automation_classical_ai_genai_distinction_matrix_new.png" /></p>
+<p><em>Figure 5.1 — Automation · Classical AI · GenAI: The Distinction Matrix. Most healthcare AI investments are executing column one tasks while being measured on column three expectations. That gap is where strategy fails.</em></p>
+<p>The confusion between automation and AI is not semantic pedantry. It produces real organizational harm in three specific ways. First, it miscalibrates investment. An organization that classifies its rules engine as AI will evaluate its AI portfolio against the performance of a rules engine — and will miss the question of what a genuinely intelligent system would have been able to do with the same data and the same operational context. Second, it miscalibrates expectations. When the rules engine performs exactly as designed — correctly executing its rules, failing on anything outside them — the organization experiences this as AI performance and draws conclusions about AI capability that are systematically too low. Third, it displaces investment. Every dollar spent maintaining a rules engine that is classified as AI is a dollar not spent on the genuine AI capability that could be transforming the underlying workflow.</p>
+<h3 id="classical-machine-learning-the-middle-layer">Classical Machine Learning: The Middle Layer<a class="headerlink" href="#classical-machine-learning-the-middle-layer" title="Permanent link">&para;</a></h3>
+<p>Classical machine learning — logistic regression, gradient boosting, random forests, convolutional neural networks for imaging — occupies a genuinely different category from automation. These systems identify statistical patterns in historical data that were not explicitly programmed by a human. A readmission prediction model trained on claims and EHR data is discovering, from the data itself, which combinations of diagnosis codes, procedure history, demographic characteristics, and utilization patterns are associated with thirty-day readmission — patterns that no rule-writer programmed and that may not be visible to human inspection of the training data. This is real machine learning. It learns. It generalizes within the distribution of its training data. It produces outputs that reflect genuine statistical inference rather than predetermined logic.</p>
+<p>But classical ML has a characteristic boundary that matters enormously for understanding where GenAI adds something genuinely new. Classical ML models learn from labeled examples of a specific task and produce outputs in the form defined by their training objective. A readmission model predicts readmission probability. A diagnostic imaging model classifies images into predefined categories. A fraud detection model scores claims for anomaly likelihood. These are powerful capabilities — but they are narrow ones. Each model does one thing, requires task-specific labeled training data, and fails gracefully but completely when presented with tasks it was not trained for. The readmission model cannot explain its prediction in natural language. The imaging classifier cannot read the clinical note that accompanies the image. The fraud model cannot generate the audit narrative that a payment integrity analyst needs to act on its findings.</p>
+<h3 id="genai-the-versatility-that-changes-the-equation">GenAI: The Versatility That Changes the Equation<a class="headerlink" href="#genai-the-versatility-that-changes-the-equation" title="Permanent link">&para;</a></h3>
+<p>Generative AI — foundation models of the scale and capability represented by GPT-4 class systems, Claude, Llama, and their successors — adds something that neither automation nor classical ML could provide: the ability to reason across tasks, synthesize across sources, generate language, and operate in novel contexts without task-specific retraining. A well-prompted foundation model can read a clinical note and extract structured diagnoses. It can then evaluate those diagnoses against a prior authorization criteria set. It can then generate the clinical argument for coverage in the specific language style the payer expects. It can then flag the documentation gaps in the physician note that are most likely to trigger a denial and suggest the specific additional documentation that would strengthen the submission. None of these steps require retraining. None require a separate model. All of them reflect the same underlying reasoning capability applied to connected steps in a real operational workflow. That is what versatility means in practice — and it is what most healthcare organizations have not yet understood about the tools they are now beginning to deploy.</p>
+<h3 id="prior-auth-appeals-one-problem-three-handlings">Prior-Auth Appeals: One Problem, Three Handlings<a class="headerlink" href="#prior-auth-appeals-one-problem-three-handlings" title="Permanent link">&para;</a></h3>
+<p>Make the distinction concrete by following a single workflow — the prior-authorization appeal — through each category. A payer denies coverage for a procedure. The clinician's office disputes the denial. Three different systems can intervene, and the difference between them is the entire argument of this chapter.</p>
+<p><strong>Automation</strong> routes the appeal to a queue based on diagnosis code, attaches the standard template, and rejects appeals where the original denial reason matches a list of non-appealable codes. Coverage is structural: it works exactly where the rules say it works, and not one workflow further. The appeal letter, if generated at all, is a fill-in-the-blanks template — clinically inert and indistinguishable across cases.</p>
+<p><strong>Classical machine learning</strong> adds prediction. A model trained on historical appeals scores incoming cases by overturn probability, surfacing the highest-yield appeals first so the human team works the cases most likely to win. The model does not draft the letter. It does not read the clinical packet. It optimizes the queue. The synthesis, the writing, and the documentation strategy still belong to the appeals team — the model has improved their throughput, not their reach.</p>
+<p><strong>Generative AI</strong> does the synthesis itself. The same foundation model reads the twelve-page clinical packet, locates the documentation gap that triggered the denial, identifies the specific clinical guideline that supports overturn, drafts the appeal letter in the payer's expected style, and flags what the physician should add to the chart to strengthen future submissions of the same type. The same model — without retraining — also handles CAPA root-cause narratives, IFU translation, EOB explanations, and post-acute discharge summaries. One platform investment, fifteen workflows.</p>
+<p>The wrong-focus trap is now visible. The organization that deploys a foundation model as an automation replacement — using it to fill in template fields — has bought a platform and is using it as a rules engine. The right cost frame is not <em>"the AI did the task"</em> but <em>"the AI did the task that no narrower tool could have done at all"</em>.</p>
+<blockquote>
+<p><strong>Expert Note — Strategic Distinction</strong></p>
+<p>Automation replaces a process step. Classical ML improves a prediction. GenAI transforms a workflow. Organizations that are using GenAI to replace process steps are getting automation-level value from a platform-level investment. The opportunity cost of that misapplication is the gap between what they are measuring and what they could have built.</p>
+</blockquote>
+<hr />
+<h2 id="topic-2-the-versatility-gap-how-wrong-focus-produces-wrong-results">Topic 2 — The Versatility Gap: How Wrong Focus Produces Wrong Results<a class="headerlink" href="#topic-2-the-versatility-gap-how-wrong-focus-produces-wrong-results" title="Permanent link">&para;</a></h2>
+<p>The versatility gap is the distance between what an organization thinks AI can do and what it actually can do. It is the single largest source of unrealized healthcare AI value in the market today. And it is maintained, almost entirely, by a mental model of AI that was formed before foundation models existed and that has not been updated to reflect what the current generation of AI systems is actually capable of.</p>
+<p>The mental model problem manifests in a specific and consistent pattern. An organization enters an AI initiative with a use case in mind — a chatbot for patient questions, or a summarization tool for clinical notes, or a risk score for readmission prediction. They deploy. They measure. They find that the tool does what it was asked to do with reasonable accuracy. They declare the AI initiative a success and move on. What they do not do — what the wrong-focus pattern systematically prevents — is ask the next question: given what we now understand about this tool's capability, what else could it be doing that we have not yet asked it to do?</p>
+<p><img alt="The GenAI Versatility Map" src="figures/the_genai_versatility_map_new.png" /></p>
+<p><em>Figure 5.2 — The GenAI Versatility Map. Three capability modes — synthesize and generate, extract and structure, reason and evaluate — each mapping to five or more distinct healthcare problems. One platform, fifteen problems, compounding value.</em></p>
+<p>The versatility map illustrates something that is immediately obvious once it is drawn but genuinely non-obvious before. Generating a multilingual IFU for a medical device, writing a CAPA root cause analysis from complaint data, drafting a prior authorization appeal letter, and producing a population health narrative for a board presentation are not four different AI problems requiring four different AI systems. They are four instances of the same underlying capability: synthesizing structured knowledge and regulatory or clinical context into coherent, accurate, audience-appropriate documents under specific constraints. A healthcare organization that builds four separate AI tools for these four workflows is spending four times the budget, incurring four times the maintenance burden, and governing four separate systems — when a single platform deployment, properly designed and governed, would have served all four workflows and been extensible to twelve more.</p>
+<p>Two public cases make the wrong-focus pattern concrete at scale. <strong>IBM Watson for Oncology</strong> was a billion-dollar bet on AI for cancer treatment recommendations — deployed against a problem class (synthesizing across heterogeneous oncology evidence into patient-specific recommendations) where the architecture mismatch was structural rather than refinable. Internal documents reviewed by investigative reporters revealed instances of "unsafe and incorrect" treatment recommendations (Ross &amp; Swetlitz 2018), and a longer post-mortem traced the program's commercial collapse to a mismatch between marketing claims and the system's actual technical reach (Strickland 2019). The well-rehearsed retrospective is not that AI had been oversold. It is that the wrong category of AI had been applied to a problem that needed a fundamentally different shape of intelligence than the system could provide. The <strong>Epic Sepsis Model</strong> offers a smaller-scale version of the same lesson with cleaner data. A classical-ML prediction model, internally validated and widely deployed across health systems, performed substantially worse on external validation than its internal benchmarks suggested — sensitivity of 0.33 at the recommended threshold, with the model failing to identify the majority of sepsis cases (Wong et al. 2021). The failure was not statistical. A narrow classifier of <em>"will this patient develop sepsis"</em> did not capture the operational and informational context in which the alert had to be acted upon — clinicians overrode it, missed cases continued, and the model's stated performance was not the performance the organization was experiencing. Both are wrong-focus failures. Both are also avoidable by the discipline that follows.</p>
+<h3 id="the-problem-first-framework">The Problem-First Framework<a class="headerlink" href="#the-problem-first-framework" title="Permanent link">&para;</a></h3>
+<p>The antidote to wrong focus is a discipline that sounds simple and proves surprisingly difficult to practice consistently: start with the pain, not the technology. Before any AI architecture discussion, before any vendor selection, before any pilot design, the organization must be able to answer four diagnostic questions with precision and honesty.</p>
+<p><img alt="The Problem-First Framework" src="figures/the_problem_first_framework_new.png" /></p>
+<p><em>Figure 5.3 — The Problem-First Framework. Four diagnostic questions that locate genuine AI opportunity before any technology selection occurs. The answers narrow the solution space more reliably than any capability survey.</em></p>
+<p>The first question asks where disproportionate human effort is being applied to tasks that are fundamentally about pattern recognition, synthesis, or generation rather than physical action or relationship. A prior authorization clinical reviewer reading twelve-page clinical packages to determine whether three criteria are met is performing pattern recognition and synthesis at high volume and high cost. That is a signal. A compliance team manually reviewing device change documentation to assess IEC 62304 change control impact is applying complex regulatory knowledge to specific cases at a pace determined by human reading speed. That is a signal. A billing team generating explanation-of-benefits narratives for complex claims is performing document generation under structured constraints. That is a signal. Each of these signals points to a workflow where GenAI can operate at the speed and scale that human teams cannot — not by replacing clinical judgment, but by handling the cognitive volume that currently absorbs the time that clinical and regulatory professionals should be spending on the genuinely complex decisions that require their expertise.</p>
+<p>The second question asks where output quality is limited by the volume of information that humans can realistically synthesize within the time available for a decision. Population health risk stratification that incorporates claims history, lab trends, pharmacy adherence, wearable biometric signals, and social determinants of health simultaneously is a synthesis task that exceeds the cognitive capacity of any human analyst working against a weekly outreach list. A post-settlement claims audit that cross-references the original authorization, the 837 claim, the 835 remittance, the clinical documentation, and the payer contract payment rules across thousands of claims simultaneously is a synthesis task that human audit teams perform on samples rather than populations because the full-population version is humanly impossible. GenAI makes the full-population version tractable. The question is whether the organization is asking it.</p>
+<p>The third and fourth questions identify where data is being collected without being acted upon due to human bandwidth limits, and where wrong focus is already producing wrong results in current AI investments. Together, the four questions produce a map of genuine AI opportunity that is grounded in operational reality rather than technology enthusiasm — and that reliably surfaces the workflows where a platform AI investment will create compounding value rather than isolated point-solution results.</p>
+<blockquote>
+<p><strong>Expert Note — The Platform Principle</strong></p>
+<p>Every healthcare AI investment should be evaluated not just on its performance in its primary use case, but on the number of adjacent workflows it can address from the same platform foundation. A point solution that solves one problem at full cost is almost always a worse investment than a platform that solves twelve problems at incremental cost. The organizations that understand this are building AI strategies. The ones that do not are building AI portfolios.</p>
+</blockquote>
+<hr />
+<h2 id="topic-3-the-honest-limits-what-ai-cannot-do-fix-or-be-accountable-for">Topic 3 — The Honest Limits: What AI Cannot Do, Fix, or Be Accountable For<a class="headerlink" href="#topic-3-the-honest-limits-what-ai-cannot-do-fix-or-be-accountable-for" title="Permanent link">&para;</a></h2>
+<p>Versatility without honesty about limits produces the most expensive failures in healthcare AI. The organizations that deploy AI with a clear-eyed understanding of what it cannot do are the ones that design their systems with appropriate human oversight, appropriate governance infrastructure, and appropriate risk management. The ones that deploy it without that understanding are the ones that discover the limits at the worst possible moment — in production, at scale, in a clinical environment where the consequences of getting it wrong are measured in patient outcomes and institutional trust.<img alt="The Honest Limits" src="figures/the_honest_limits_new.png" /></p>
+<p><em>Figure 5.4 — The Honest Limits. Four categories of genuine AI limitation that every healthcare deployment must address in its design, its governance, and its risk management documentation.</em></p>
+<h3 id="hallucination-the-confident-wrong-answer">Hallucination: The Confident Wrong Answer<a class="headerlink" href="#hallucination-the-confident-wrong-answer" title="Permanent link">&para;</a></h3>
+<p>Hallucination is the most discussed limitation of generative AI — and it deserves its prominence. A language model that generates a confident, fluent, factually incorrect clinical rationale is not producing an obvious error. It is producing an output that looks exactly like a correct output — well-structured, professionally written, internally consistent, and wrong in ways that are difficult to detect without independent verification of the underlying facts. In a non-clinical context, this is an inconvenience. In a clinical context, it is a patient safety event waiting to happen. A prior authorization appeal letter that cites a clinical guideline that does not say what the model claims it says. A CAPA root cause analysis that references a regulatory requirement incorrectly. A multilingual IFU that introduces a subtle translation error that alters the clinical meaning of a safety instruction. Each of these is a hallucination failure mode that is specific to healthcare deployment and that must appear in the system's ISO 14971 risk register as an identified hazard with documented risk control measures.</p>
+<p>The mitigation strategies for hallucination in healthcare AI are well-established and must be built into the architecture rather than added as afterthoughts. Retrieval-augmented generation — grounding model outputs in verified source documents rather than allowing free generation from model weights alone — dramatically reduces hallucination rates for factual content (Lewis et al. 2020). Human review gates at clinically significant output points ensure that no AI-generated clinical or regulatory content reaches consequential use without expert verification — a principle explicitly enumerated as one of the ten Good Machine Learning Practice (GMLP) Guiding Principles published jointly by the FDA, Health Canada, and the UK MHRA (FDA, Health Canada &amp; MHRA 2021). Factual grounding validation — systematic comparison of model outputs against authoritative sources — provides a quality control layer that can be audited and documented. None of these mitigations eliminate hallucination risk entirely. All of them reduce it to a level that can be managed within a properly designed risk framework.</p>
+<p>The cost of skipping these mitigations is concrete: an AI-drafted appeal letter that cites a clinical guideline which does not say what the model claims; the payer rejection that follows on grounds of factual inaccuracy; the six-week surgical delay while the appeal is reworked manually. The hallucination is not a model error. It is a deployment failure that an architectural decision could have prevented.</p>
+<h3 id="accountability-the-line-that-cannot-be-crossed">Accountability: The Line That Cannot Be Crossed<a class="headerlink" href="#accountability-the-line-that-cannot-be-crossed" title="Permanent link">&para;</a></h3>
+<p>AI cannot bear legal, regulatory, or professional accountability for the decisions it influences. This is not a temporary limitation of current technology — it is a structural property of AI systems that will not change with capability improvements. The clinician who acts on an AI diagnostic recommendation is responsible for that clinical decision, regardless of how the AI framed its confidence. The regulatory affairs professional who releases a device label containing AI-generated content without independent expert review is personally and institutionally accountable for that label's accuracy and compliance. The payer analyst who initiates a recoupment action based solely on an AI audit output, without reviewing the underlying clinical and claims documentation, is making a business decision for which the organization is legally accountable and for which the AI bears none.</p>
+<p>This accountability boundary must be designed into every healthcare AI system from the first architecture decision. The intended use statement must specify that the system is decision support, not decision replacement — a distinction the FDA codified in its Clinical Decision Support guidance, where systems whose recommendations the clinician cannot meaningfully review or override are reclassified as the device itself (FDA 2022). The human-in-the-loop design must be genuine — not performative oversight where a human clicks approve on AI outputs without meaningful review, but substantive engagement where the human reviewer has the information, the time, and the authority to override the AI output when their judgment differs. The EU AI Act formalizes this requirement at Article 14: high-risk AI systems must be designed so that natural persons can effectively oversee them, including the ability to "decide, in any particular situation, not to use the high-risk AI system or otherwise disregard, override or reverse the output" (Regulation (EU) 2024/1689). The audit trail must document both the AI output and the human decision that followed it, because in any subsequent regulatory or legal proceeding, it is the human decision that will be examined, and the AI output that will be context.</p>
+<p>The pattern fails the moment the human becomes a button-pusher. A care manager who approves AI-flagged denials in batch without opening the record; a regulatory submission that includes AI-generated risk-benefit language without independent review; an audit recoupment based on an AI score with no underlying chart review. In each case, accountability does not disappear. It concentrates on the person who signed the output — and that person is rarely the one who deployed the model.</p>
+<h3 id="clinical-judgment-the-irreducible-human-element">Clinical Judgment: The Irreducible Human Element<a class="headerlink" href="#clinical-judgment-the-irreducible-human-element" title="Permanent link">&para;</a></h3>
+<p>There is a category of clinical decision-making that AI cannot perform — not because it lacks the information processing capability, but because the decision is not fundamentally about information processing. It is about integrating clinical evidence with a specific patient's values, fears, cultural context, social circumstances, and preferences for how they want to live their life — a synthesis that requires a human relationship and a human conversation that no AI system can substitute for. The patient with Stage III cancer who, when presented with two treatment options of roughly equivalent survival probability, chooses the one with lower efficacy but less impact on her ability to care for her children — that decision cannot be optimized by an AI system. The elderly patient with multiple comorbidities who declines the intervention that clinical evidence supports because his values prioritize quality of life over quantity — that conversation cannot be delegated to an AI agent. AI can surface the evidence, present the options, flag the tradeoffs, and document the discussion. The judgment is the clinician's, and the relationship in which that judgment is exercised is irreplaceable.</p>
+<p>Designs that ignore this produce predictable failure. AI-routed care management scores the patient as low-risk because she has not utilized care, missing the reason she has not utilized care. AI-generated discharge education addresses the diagnosis correctly and the patient's actual literacy, language, and home circumstances not at all. In both cases the model is performing exactly what it was designed to perform; the deployment failed to recognize what it was not designed to perform.</p>
+<h3 id="broken-foundations-the-limit-that-surprises-the-most">Broken Foundations: The Limit That Surprises the Most<a class="headerlink" href="#broken-foundations-the-limit-that-surprises-the-most" title="Permanent link">&para;</a></h3>
+<p>Of the four honest limits, this is the one that surprises organizations most — because it is not a limit of the AI itself but a limit of what the AI can do when the environment it is deployed into is not ready for it. AI cannot fix a broken data environment by being smart enough to work around it. A foundation model deployed on top of fragmented, inconsistently coded, poorly governed clinical data will produce outputs that are coherent, fluent, and wrong in ways that are harder to detect than the original data quality problem — because the model's linguistic fluency creates an appearance of reliability that the underlying data does not support. The pattern repeats further upstream, in the data itself: a widely used commercial risk-scoring algorithm was found to systematically under-prioritize Black patients for high-risk care management because it used historical healthcare <em>spending</em> as a proxy for healthcare <em>need</em> — patients who had been spent on less were classified as needing less, a bias inherited from the data, not invented by the model (Obermeyer et al. 2019). The bias travels regardless of how capable the downstream model is. The pulse-oximeter case is even more concrete: devices calibrated predominantly on lighter-skinned populations under-detect hypoxemia in Black patients at nearly three times the rate of white patients (Sjoding et al. 2020) — an AI system that ingests that signal cannot reason its way around the sensor that produced it. In practice this is a foundation model deployed across three EHRs whose problem lists code <em>diabetes</em> five different ways, producing population-health summaries that read fluent and are systematically wrong about prevalence — coherent failure that is harder to catch than the underlying data problem it was meant to surface. AI cannot fix a broken process by automating the broken steps faster. A prior authorization workflow with a fundamental design flaw will be a prior authorization workflow with the same fundamental design flaw executing at higher volume if AI is layered on top of it without redesigning the process. And AI cannot fix a governance problem by being capable enough to work without accountability infrastructure. No model, however powerful, compensates for the absence of the data quality framework, the consent management system, the audit trail, and the human oversight design that responsible healthcare AI deployment requires.</p>
+<blockquote>
+<p><strong>Expert Note — The Foundation Rule</strong></p>
+<p>Before deploying AI on any healthcare workflow, the organization must be able to answer three questions honestly. Is the data that will feed this system of sufficient quality, consistency, and governance to support the outputs it will generate? Is the process that AI will participate in designed correctly, or is it being automated in its current broken state? And is the governance infrastructure — audit trails, human oversight, accountability documentation — in place before the first AI output reaches a clinical or operational decision? If the answer to any of these is no, the AI deployment should wait. Building on a broken foundation produces coherent, fluent, expensive failure.</p>
+</blockquote>
+<hr />
+<h2 id="chapter-close-the-mental-model-that-travels">Chapter Close: The Mental Model That Travels<a class="headerlink" href="#chapter-close-the-mental-model-that-travels" title="Permanent link">&para;</a></h2>
+<p>The distinction between automation, classical AI, and GenAI. The versatility gap and the wrong-focus trap. The problem-first framework that locates genuine opportunity. The honest limits that every responsible deployment must respect. These four ideas constitute the mental model that every subsequent chapter in this book assumes. They are not academic concepts — they are operational tools. The reader who carries them into the MedTech chapter will ask different questions about CAPA automation and IFU generation than the reader who does not. The reader who carries them into the payer chapter will see the claims audit architecture and the population health stratification system differently. And the reader who carries the honest limits into every deployment decision they make will build systems that earn and keep the trust of the clinicians, regulators, administrators, and patients they are designed to serve.</p>
+<p>Part II of this book applies these tools to the specific operational domains where healthcare AI is being built and deployed right now. Chapter 6 opens with MedTech — the domain where regulated software and clinical intelligence converge, and where AI is beginning to transform the product lifecycle from concept to post-market surveillance. The problems are real. The architectures are specific. The regulatory constraints are non-negotiable. And the versatility of the tools available to address them is, as this chapter has argued, substantially greater than most organizations have yet understood.</p>
+<blockquote>
+<p><em>"The most expensive misunderstanding in healthcare AI is not that the technology was oversold. It is that the technology was underused — applied to the wrong problems, deployed as point solutions, and evaluated against expectations formed before anyone understood what it could actually do."</em></p>
+</blockquote>
+<hr />
+<h2 id="for-practitioners">For Practitioners<a class="headerlink" href="#for-practitioners" title="Permanent link">&para;</a></h2>
+<p>Technical readers: a companion <strong><a href="practitioner/">Practitioner Depth</a></strong> page accompanies this chapter — regulatory data snapshots plus runnable, Colab-ready code.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="regulatory-guidance-fda">Regulatory guidance — FDA<a class="headerlink" href="#regulatory-guidance-fda" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>FDA, Health Canada &amp; UK MHRA</strong> (2021). <em>Good Machine Learning Practice for Medical Device Development: Guiding Principles</em>. Joint guidance, October 2021. <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles">https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles</a></li>
+<li><strong>FDA</strong> (2021a). <em>Artificial Intelligence and Machine Learning (AI/ML) Software as a Medical Device Action Plan</em>. Center for Devices and Radiological Health, January 2021.</li>
+<li><strong>FDA</strong> (2022). <em>Clinical Decision Support Software — Guidance for Industry and FDA Staff</em>. September 2022.</li>
+<li><strong>FDA</strong> (2024). <em>Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence-Enabled Device Software Functions</em>. Final Guidance, December 2024.</li>
+</ul>
+<h3 id="regulatory-framework-european-union">Regulatory framework — European Union<a class="headerlink" href="#regulatory-framework-european-union" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>European Parliament and Council</strong> (2024). <em>Regulation (EU) 2024/1689 of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)</em>. Entered into force 1 August 2024. Articles 6 and 14, Annex III.</li>
+<li><strong>European Parliament and Council</strong> (2017). <em>Regulation (EU) 2017/745 on medical devices (Medical Device Regulation)</em>.</li>
+</ul>
+<h3 id="international-guidance">International guidance<a class="headerlink" href="#international-guidance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>World Health Organization</strong> (2021). <em>Ethics and Governance of Artificial Intelligence for Health: WHO Guidance</em>. Geneva: WHO, June 2021.</li>
+</ul>
+<h3 id="peer-reviewed-literature">Peer-reviewed literature<a class="headerlink" href="#peer-reviewed-literature" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Wong, A. et al.</strong> (2021). "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients." <em>JAMA Internal Medicine</em> 181(8): 1065–1070.</li>
+<li><strong>Obermeyer, Z., Powers, B., Vogeli, C. &amp; Mullainathan, S.</strong> (2019). "Dissecting racial bias in an algorithm used to manage the health of populations." <em>Science</em> 366(6464): 447–453.</li>
+<li><strong>Sjoding, M. W., Dickson, R. P., Iwashyna, T. J., Gay, S. E. &amp; Valley, T. S.</strong> (2020). "Racial Bias in Pulse Oximetry Measurement." <em>New England Journal of Medicine</em> 383: 2477–2478.</li>
+<li><strong>Lewis, P. et al.</strong> (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." <em>Advances in Neural Information Processing Systems</em> 33 (NeurIPS 2020).</li>
+<li><strong>Hannun, A. Y. et al.</strong> (2019). "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network." <em>Nature Medicine</em> 25: 65–69.</li>
+</ul>
+<h3 id="industry-analysis-and-investigative-journalism">Industry analysis and investigative journalism<a class="headerlink" href="#industry-analysis-and-investigative-journalism" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Strickland, E.</strong> (2019). "How IBM Watson Overpromised and Underdelivered on AI Health Care." <em>IEEE Spectrum</em>, April 2019.</li>
+<li><strong>Ross, C. &amp; Swetlitz, I.</strong> (2018). "IBM's Watson supercomputer recommended 'unsafe and incorrect' cancer treatments, internal documents show." <em>STAT News</em>, July 25, 2018.</li>
+</ul>
+<hr />
+<p><em>Chapter 5 · Preview edition. The complete book is in progress — <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">share feedback</a>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-the-semantic-layer/practitioner/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Practitioner Depth">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Practitioner Depth
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="practitioner/" class="md-footer__link md-footer__link--next" aria-label="Next: Practitioner Depth">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Practitioner Depth
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Preview edition — a living document. Feedback welcome via <a href="https://github.com/zkumar/healthcare-ai-book-preview/issues">GitHub Issues</a>.
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/zkumar/healthcare-ai-book-preview" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
