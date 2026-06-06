@@ -9,3 +9,4 @@
 01-anatomy-of-the-healthcare-enterprise
 02-the-regulated-machine
 03-the-data-reality
+04-the-semantic-layer

@@ -53,6 +53,10 @@ This is **not** a textbook that serves every answer on a plate. Healthcare AI is
 
     The data beneath every healthcare AI system: claims, EHR, imaging, the missingness problem, and the standards that make interoperability possible.
 
+- **[Chapter 4 — The Semantic Layer](04-the-semantic-layer/index.md)**
+
+    Coding systems, clinical ontologies, and NLP — and why none of it works without regulatory alignment. From ICD-11 to OMOP to foundation models, with the FDA SaMD spectrum and the EU AI Act in view.
+
 </div>
 
 Each chapter has a companion **Practitioner Depth** page with regulatory data snapshots and runnable, Colab-ready code.
