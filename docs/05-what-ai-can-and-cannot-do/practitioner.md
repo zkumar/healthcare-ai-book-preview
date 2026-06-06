@@ -78,9 +78,9 @@ _Fillable templates with dropdowns, formula-driven verdicts, and conditional for
 
 | Template | Download |
 |---|---|
-| **AI Category Checklist** | [⬇ `ai-category-checklist.xlsx`](files/ai-category-checklist.xlsx) |
-| **Pre Deployment Readiness** | [⬇ `pre-deployment-readiness.xlsx`](files/pre-deployment-readiness.xlsx) |
-| **Problem First Worksheet** | [⬇ `problem-first-worksheet.xlsx`](files/problem-first-worksheet.xlsx) |
+| **AI Category Checklist** | [⬇ `ai-category-checklist.xlsx`](../files/ai-category-checklist.xlsx) |
+| **Pre Deployment Readiness** | [⬇ `pre-deployment-readiness.xlsx`](../files/pre-deployment-readiness.xlsx) |
+| **Problem First Worksheet** | [⬇ `problem-first-worksheet.xlsx`](../files/problem-first-worksheet.xlsx) |
 
 ## Code
 
