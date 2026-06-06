@@ -2,38 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/about/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/dedication/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/01-anatomy-of-the-healthcare-enterprise/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/01-anatomy-of-the-healthcare-enterprise/practitioner/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/02-the-regulated-machine/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/02-the-regulated-machine/practitioner/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/03-the-data-reality/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
     </url>
     <url>
          <loc>https://zkumar.github.io/healthcare-ai-book-preview/03-the-data-reality/practitioner/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-06-06</lastmod>
+    </url>
+    <url>
+         <loc>https://zkumar.github.io/healthcare-ai-book-preview/04-the-semantic-layer/</loc>
+         <lastmod>2026-06-06</lastmod>
+    </url>
+    <url>
+         <loc>https://zkumar.github.io/healthcare-ai-book-preview/04-the-semantic-layer/practitioner/</loc>
+         <lastmod>2026-06-06</lastmod>
     </url>
 </urlset>
