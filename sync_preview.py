@@ -139,7 +139,14 @@ for slug in slugs:
             parts.append("")
 
         # Code: copy .py, convert to .ipynb, render inline with Colab badge.
-        py_files = sorted((prac_src / "code").glob("*.py")) if (prac_src / "code").is_dir() else []
+        # Skip private/internal scripts (leading _) and build/generator scripts (build_*).
+        py_files = []
+        code_dir = prac_src / "code"
+        if code_dir.is_dir():
+            py_files = sorted(
+                p for p in code_dir.glob("*.py")
+                if not p.name.startswith("_") and not p.name.startswith("build_")
+            )
         if py_files:
             parts.append("## Code")
             parts.append("")
