@@ -57,6 +57,10 @@ This is **not** a textbook that serves every answer on a plate. Healthcare AI is
 
     Coding systems, clinical ontologies, and NLP — and why none of it works without regulatory alignment. From ICD-11 to OMOP to foundation models, with the FDA SaMD spectrum and the EU AI Act in view.
 
+- **[Chapter 5 — What AI Can and Cannot Do](05-what-ai-can-and-cannot-do/index.md)**
+
+    The mental model that changes how every subsequent chapter reads: automation vs classical ML vs GenAI, the versatility gap that produces wrong-focus failures, and the honest limits — grounded in Watson, Epic Sepsis, Obermeyer, and the FDA / EU AI Act regulatory anchors.
+
 </div>
 
 Each chapter has a companion **Practitioner Depth** page with regulatory data snapshots and runnable, Colab-ready code.
