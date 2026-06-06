@@ -118,6 +118,25 @@ for slug in slugs:
                 parts.append(demote_headings(sf.read_text().strip()))
                 parts.append("")
 
+        # Workshop tools (Excel templates from practitioner/files/*.xlsx).
+        xlsx_dir = prac_src / "files"
+        xlsx_files = sorted(xlsx_dir.glob("*.xlsx")) if xlsx_dir.is_dir() else []
+        if xlsx_files:
+            files_dest = dest_dir / "files"
+            files_dest.mkdir(exist_ok=True)
+            parts.append("## Workshop Tools (Excel)")
+            parts.append("")
+            parts.append("_Fillable templates with dropdowns, formula-driven verdicts, and conditional formatting._ "
+                         "Open in Excel, Numbers, or Google Sheets and run with your team.")
+            parts.append("")
+            parts.append("| Template | Download |")
+            parts.append("|---|---|")
+            for xf in xlsx_files:
+                shutil.copy(xf, files_dest / xf.name)
+                title = xf.stem.replace("-", " ").title().replace("Ai ", "AI ")
+                parts.append(f"| **{title}** | [⬇ `{xf.name}`](files/{xf.name}) |")
+            parts.append("")
+
         # Code: copy .py, convert to .ipynb, render inline with Colab badge.
         py_files = sorted((prac_src / "code").glob("*.py")) if (prac_src / "code").is_dir() else []
         if py_files:
