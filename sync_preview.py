@@ -133,9 +133,10 @@ for slug in slugs:
             parts.append("|---|---|")
             for xf in xlsx_files:
                 shutil.copy(xf, files_dest / xf.name)
-                title = xf.stem.replace("-", " ").title().replace("Ai ", "AI ")
+                # Use a distinct variable name — `title` is the chapter title used later for nav.
+                xlsx_title = xf.stem.replace("-", " ").title().replace("Ai ", "AI ")
                 # practitioner.md is at /<slug>/practitioner/, files at /<slug>/files/ — needs ../
-                parts.append(f"| **{title}** | [⬇ `{xf.name}`](../files/{xf.name}) |")
+                parts.append(f"| **{xlsx_title}** | [⬇ `{xf.name}`](../files/{xf.name}) |")
             parts.append("")
 
         # Code: copy .py, convert to .ipynb, render inline with Colab badge.
